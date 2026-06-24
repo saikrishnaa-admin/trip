@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vietnam 2026 — Heritage Trip</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #C9973A; --gold-light: #fdf8ee; --gold-mid: #f0d99a;
+  --green: #1e6b45; --green-light: #eaf5ef;
+  --navy: #1C2B4A; --navy-mid: #2d4270; --navy-light: #e8edf5;
+  --red: #b83232; --red-light: #fdf0f0;
+  --purple: #5b3fa0; --purple-light: #f0ebff;
+  --teal: #0e7a72; --teal-light: #e6f5f4;
+  --ink: #1a1a1a; --ink-mid: #444; --ink-light: #888;
+  --border: #e5e1d8; --bg: #f9f7f4; --white: #ffffff;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.6; }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 99px; }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  background: var(--navy);
+  display: flex; align-items: center;
+  height: 54px; padding: 0 2rem;
+  border-bottom: 2px solid var(--gold);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+}
+.nav-logo { font-family: 'Playfair Display', serif; color: var(--white); font-size: 17px; margin-right: auto; letter-spacing: 0.02em; }
+.nav-logo span { color: var(--gold); }
+nav a { color: rgba(255,255,255,0.58); text-decoration: none; font-size: 12px; font-weight: 500; padding: 0 12px; height: 54px; display: flex; align-items: center; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.15s; letter-spacing: 0.04em; white-space: nowrap; }
+nav a:hover, nav a.active { color: var(--white); border-bottom-color: var(--gold); }
+@media (max-width: 700px) { nav a { display: none; } }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, #0f1d35 0%, #1C2B4A 40%, #1a3a5c 70%, #0d2238 100%);
+  padding: 5rem 2rem 4rem; text-align: center; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(201,151,58,0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(30,107,69,0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero-deco {
+  position: absolute; font-size: 280px; font-family: 'Playfair Display', serif;
+  color: rgba(255,255,255,0.025); top: -40px; left: 50%; transform: translateX(-50%);
+  white-space: nowrap; pointer-events: none; user-select: none; line-height: 1;
+}
+.hero-eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.hero-eyebrow::before, .hero-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--gold); opacity: 0.5; }
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 6vw, 4rem); color: var(--white);
+  line-height: 1.12; margin-bottom: 0.5rem; position: relative;
+}
+.hero h1 em { font-style: italic; color: rgba(255,255,255,0.55); display: block; font-size: 0.7em; margin-top: 4px; }
+.hero-ref { color: rgba(255,255,255,0.4); font-size: 12px; margin-bottom: 2.5rem; letter-spacing: 0.04em; }
+.hero-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 2.5rem; }
+.pill { border-radius: 99px; padding: 6px 16px; font-size: 12px; font-weight: 500; }
+.pill-outline { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.16); color: rgba(255,255,255,0.78); }
+.pill-gold { background: rgba(201,151,58,0.15); border: 1px solid rgba(201,151,58,0.4); color: var(--gold); }
+.pill-green { background: rgba(30,107,69,0.2); border: 1px solid rgba(30,107,69,0.4); color: #5ecf98; }
+
+/* ROUTE STRIP inside hero */
+.route-strip {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 14px 20px; display: inline-flex;
+  align-items: center; gap: 2px; flex-wrap: wrap; justify-content: center;
+  max-width: 680px; margin: 0 auto;
+}
+.route-city { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.72); padding: 2px 6px; }
+.route-arrow { color: var(--gold); font-size: 12px; opacity: 0.7; }
+
+/* ── PASSENGERS BANNER ── */
+.pax-banner {
+  background: linear-gradient(90deg, var(--navy-mid) 0%, #1e3d6e 50%, var(--navy-mid) 100%);
+  border-bottom: 1px solid rgba(201,151,58,0.2);
+  padding: 1rem 2rem;
+}
+.pax-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+.pax-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-right: 4px; }
+.pax-card {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px; padding: 6px 12px;
+}
+.pax-flag { font-size: 16px; }
+.pax-name { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.85); }
+.pax-origin { font-size: 10px; color: rgba(255,255,255,0.4); }
+
+/* ── LAYOUT ── */
+.container { max-width: 960px; margin: 0 auto; padding: 3rem 1.5rem; }
+.section-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 600; margin-bottom: 1.75rem; color: var(--ink); }
+.divider { border: none; border-top: 1px solid var(--border); max-width: 960px; margin: 0 auto; }
+
+/* ── GLANCE CARDS ── */
+.glance-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-bottom: 0; }
+@media (max-width: 680px) { .glance-grid { grid-template-columns: repeat(2,1fr); } }
+.glance-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; padding: 18px 14px; text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative; overflow: hidden;
+}
+.glance-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px; background: linear-gradient(90deg, var(--gold), transparent);
+}
+.glance-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+.glance-icon { font-size: 24px; margin-bottom: 8px; display: block; }
+.glance-val { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 600; color: var(--navy); line-height: 1.2; }
+.glance-lbl { font-size: 10px; color: var(--ink-light); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ── CHECKLIST ── */
+.progress-wrap {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  border-radius: 14px; padding: 1.4rem 1.6rem; margin-bottom: 2rem;
+  display: flex; align-items: center; gap: 1.5rem;
+  box-shadow: 0 4px 16px rgba(28,43,74,0.2);
+}
+.progress-stat { text-align: center; min-width: 54px; }
+.progress-stat .num { font-size: 2rem; font-weight: 700; font-family: 'Playfair Display', serif; color: var(--gold); line-height: 1; }
+.progress-stat .lbl { font-size: 10px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 3px; }
+.progress-bar-container { flex: 1; }
+.progress-bar-text { font-size: 12px; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+.progress-bar-bg { height: 7px; background: rgba(255,255,255,0.12); border-radius: 99px; }
+.progress-bar-fill { height: 7px; border-radius: 99px; background: linear-gradient(90deg, var(--gold), #e8b84b); transition: width 0.5s ease; }
+
+.checklist-group { margin-bottom: 2rem; }
+.cg-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 6px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 0.7rem;
+}
+.cg-done { background: var(--green-light); color: var(--green); border: 1px solid #b0d9c0; }
+.cg-soon { background: var(--gold-light); color: #7a5010; border: 1px solid var(--gold-mid); }
+.cg-pre { background: var(--navy-light); color: var(--navy); border: 1px solid #c0cde8; }
+
+.check-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 12px 15px; background: var(--white); border: 1px solid var(--border);
+  border-radius: 11px; margin-bottom: 6px; cursor: pointer;
+  transition: box-shadow 0.15s, border-color 0.15s, transform 0.15s;
+  user-select: none;
+}
+.check-item:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.07); border-color: #ccc; transform: translateX(2px); }
+.check-item.done { opacity: 0.42; }
+.check-item.done .ci-title { text-decoration: line-through; color: var(--ink-light); }
+.checkbox {
+  width: 21px; height: 21px; min-width: 21px; border: 1.5px solid var(--border);
+  border-radius: 6px; display: flex; align-items: center; justify-content: center;
+  margin-top: 1px; background: var(--white); transition: all 0.15s; font-size: 12px; color: transparent;
+}
+.check-item.done .checkbox { background: var(--green); border-color: var(--green); color: white; }
+.ci-body { flex: 1; }
+.ci-title { font-size: 14px; font-weight: 500; color: var(--ink); line-height: 1.4; }
+.ci-sub { font-size: 12px; color: var(--ink-light); margin-top: 3px; line-height: 1.5; }
+
+/* ── COST TABLE ── */
+.rates-bar {
+  background: linear-gradient(90deg, var(--navy) 0%, var(--navy-mid) 100%);
+  color: rgba(255,255,255,0.65); font-size: 12px;
+  padding: 10px 18px; border-radius: 10px; margin-bottom: 1.25rem;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  box-shadow: 0 2px 10px rgba(28,43,74,0.15);
+}
+.rates-bar strong { color: var(--gold); }
+.rates-bar .dot { color: rgba(255,255,255,0.25); }
+
+.cost-wrap { overflow-x: auto; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.cost-table { width: 100%; border-collapse: collapse; background: var(--white); min-width: 780px; }
+.cost-table thead tr:first-child th {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  color: rgba(255,255,255,0.85); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.07em; text-transform: uppercase; padding: 13px 14px; text-align: left;
+}
+.cost-table thead tr:first-child th:not(:first-child):not(:nth-child(2)) { text-align: center; }
+/* passenger sub-header */
+.cost-table thead tr.pax-header th {
+  font-size: 11px; font-weight: 600; padding: 8px 14px; text-align: center; border-bottom: 2px solid var(--border);
+}
+.th-india { background: #fff8f0; color: #7a3a10; border-bottom: 2px solid #f0c080 !important; }
+.th-aus { background: #f0f6ff; color: #1a3a7a; border-bottom: 2px solid #90b8e8 !important; }
+.th-item { background: var(--bg); color: var(--ink-mid); border-bottom: 2px solid var(--border) !important; text-align: left !important; }
+.th-total-paid { background: var(--gold-light); color: #7a5010; border-bottom: 2px solid var(--gold-mid) !important; text-align: left !important; }
+
+.cost-table td { padding: 11px 14px; border-bottom: 1px solid var(--border); color: var(--ink-mid); vertical-align: middle; font-size: 13px; }
+.cost-table td.item-col { font-weight: 500; color: var(--ink); }
+.cost-table td.item-col.sub { padding-left: 26px; font-weight: 400; font-size: 12px; color: var(--ink-mid); }
+.cost-table td.total-paid-col { font-size: 12px; color: var(--ink-light); font-style: italic; }
+.cost-table td.num-col { text-align: center; font-variant-numeric: tabular-nums; font-size: 13px; }
+.cost-table tr:last-child td { border-bottom: none; }
+.cost-table tr.section-hdr td {
+  background: linear-gradient(90deg, var(--gold-light), #fefcf5);
+  color: #7a5010; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 14px;
+  border-top: 1px solid var(--gold-mid);
+}
+.cost-table tr.sub-row td { background: #fdfcfa; }
+.cost-table tr.summary-row td { background: #f4f2ee; font-weight: 600; color: var(--ink); border-top: 2px solid var(--border); }
+.cost-table tr.grand-row td {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  color: var(--white); font-weight: 700; font-size: 14px;
+  border-top: none;
+}
+.cost-table tr.grand-row td:first-child { font-family: 'Playfair Display', serif; font-size: 15px; }
+.cost-table tr:hover:not(.section-hdr):not(.grand-row):not(.summary-row) td { background: #faf9f6; }
+.cost-table tr.due-row td { background: #fff5f5; }
+.cost-table tr.due-row:hover td { background: #ffeded; }
+.cost-table tr.tbd-row td { background: #fff8f5; }
+.cost-table tr.tbd-row:hover td { background: #fff0eb; }
+
+.badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 99px; margin-left: 5px; vertical-align: middle; white-space: nowrap; }
+.b-paid { background: var(--green-light); color: var(--green); border: 1px solid #b0d9c0; }
+.b-due { background: var(--gold-light); color: #7a5010; border: 1px solid var(--gold-mid); }
+.b-tbd { background: var(--red-light); color: var(--red); border: 1px solid #e8b0b0; }
+.b-est { background: var(--purple-light); color: var(--purple); border: 1px solid #c8b8f0; }
+
+/* ── ITINERARY ── */
+.day-card { background: var(--white); border: 1px solid var(--border); border-radius: 13px; margin-bottom: 8px; overflow: hidden; transition: box-shadow 0.2s; }
+.day-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+.day-header { display: flex; align-items: center; gap: 14px; padding: 15px 18px; cursor: pointer; transition: background 0.15s; }
+.day-header:hover { background: var(--bg); }
+.day-num {
+  width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; color: var(--white);
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+}
+.day-info { flex: 1; }
+.day-date { font-size: 10px; color: var(--gold); font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; }
+.day-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-top: 2px; }
+.day-meta { font-size: 12px; color: var(--ink-light); margin-top: 1px; }
+.day-tag {
+  font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 99px;
+  white-space: nowrap; margin-left: auto; flex-shrink: 0;
+}
+.tag-sapa { background: var(--green-light); color: var(--green); border: 1px solid #b0d9c0; }
+.tag-hanoi { background: var(--navy-light); color: var(--navy); border: 1px solid #c0cde8; }
+.tag-halong { background: #e8f4ff; color: #1560a0; border: 1px solid #a0c8f0; }
+.tag-danang { background: var(--red-light); color: var(--red); border: 1px solid #e8b0b0; }
+.tag-travel { background: var(--gold-light); color: #7a5010; border: 1px solid var(--gold-mid); }
+.day-chevron { color: var(--ink-light); font-size: 14px; transition: transform 0.25s; flex-shrink: 0; margin-left: 8px; }
+.day-card.open .day-chevron { transform: rotate(180deg); }
+.day-body { padding: 0 18px 16px; border-top: 1px solid var(--border); display: none; }
+.day-card.open .day-body { display: block; }
+.day-body ul { padding: 0; list-style: none; margin-top: 12px; }
+.day-body ul li { font-size: 13px; color: var(--ink-mid); padding: 6px 0 6px 20px; position: relative; border-bottom: 1px solid var(--border); line-height: 1.55; }
+.day-body ul li:last-child { border-bottom: none; }
+.day-body ul li::before { content: '›'; position: absolute; left: 4px; color: var(--gold); font-size: 14px; top: 5px; font-weight: 700; }
+
+/* ── FLIGHTS ── */
+.flight-section { margin-bottom: 2.5rem; }
+.flight-section-title { font-size: 11px; font-weight: 700; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.09em; margin-bottom: 0.75rem; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+.flight-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; transition: box-shadow 0.2s; }
+.flight-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.07); }
+.fc-header { font-size: 10px; font-weight: 700; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+.fc-confirmed { background: var(--green-light); color: var(--green); font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 99px; border: 1px solid #b0d9c0; }
+.flight-route { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.ap-code { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: var(--navy); line-height: 1; }
+.ap-city { font-size: 10px; color: var(--ink-light); margin-top: 2px; }
+.route-mid { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.route-bar { width: 100%; height: 1px; background: var(--border); position: relative; }
+.route-bar::after { content: '✈'; position: absolute; right: -3px; top: -9px; font-size: 14px; color: var(--gold); }
+.route-dur { font-size: 10px; color: var(--ink-light); }
+.fd { font-size: 12px; color: var(--ink-mid); margin-bottom: 3px; }
+.fd strong { color: var(--ink); }
+.fc-warn { background: #fff8e6; border: 1px solid #f0d080; border-radius: 8px; padding: 8px 11px; font-size: 11px; color: #7a5010; margin-top: 10px; line-height: 1.5; }
+.fc-info { background: var(--green-light); border: 1px solid #b0d9c0; border-radius: 8px; padding: 8px 11px; font-size: 11px; color: #1a5c38; margin-top: 10px; }
+
+/* ── HOTELS ── */
+.hotels-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+@media (max-width: 560px) { .hotels-grid { grid-template-columns: 1fr; } }
+.hotel-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: 13px; padding: 18px;
+  transition: box-shadow 0.2s, transform 0.2s; position: relative; overflow: hidden;
+}
+.hotel-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+}
+.hotel-card.hc-sapa::before { background: linear-gradient(90deg, var(--green), #5ecf98); }
+.hotel-card.hc-hanoi::before { background: linear-gradient(90deg, var(--navy), #4a70c0); }
+.hotel-card.hc-halong::before { background: linear-gradient(90deg, #1560a0, #40a0e0); }
+.hotel-card.hc-danang::before { background: linear-gradient(90deg, var(--red), #e06060); }
+.hotel-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.09); transform: translateY(-2px); }
+.hotel-city { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; margin-top: 4px; }
+.hc-sapa .hotel-city { color: var(--green); }
+.hc-hanoi .hotel-city { color: var(--navy); }
+.hc-halong .hotel-city { color: #1560a0; }
+.hc-danang .hotel-city { color: var(--red); }
+.hotel-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: var(--ink); margin-bottom: 5px; }
+.hotel-room { font-size: 12px; color: var(--ink-mid); margin-bottom: 8px; }
+.hotel-dates { font-size: 11px; color: var(--ink-light); display: flex; justify-content: space-between; margin-bottom: 8px; }
+.upgrade-badge { display: inline-block; background: var(--gold-light); color: #7a5010; font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 99px; border: 1px solid var(--gold-mid); }
+
+/* ── NOTES ── */
+.notes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 600px) { .notes-grid { grid-template-columns: 1fr; } }
+.note-card { display: flex; gap: 11px; padding: 13px 15px; border-radius: 11px; font-size: 13px; line-height: 1.55; }
+.note-card.warn { background: #fff8e6; border: 1px solid #f0d080; color: #7a5010; }
+.note-card.info { background: var(--navy-light); border: 1px solid #c0cde8; color: #1a3a7a; }
+.note-card.tip { background: var(--green-light); border: 1px solid #b0d9c0; color: #1a5c38; }
+.note-card.purple { background: var(--purple-light); border: 1px solid #c8b8f0; color: #3a2070; }
+.note-icon { font-size: 17px; flex-shrink: 0; margin-top: 1px; }
+
+/* ── FOOTER ── */
+footer {
+  background: linear-gradient(135deg, var(--navy) 0%, #0d1d35 100%);
+  color: rgba(255,255,255,0.45); text-align: center;
+  padding: 2.5rem 2rem; font-size: 12px; margin-top: 0;
+  border-top: 2px solid var(--gold);
+}
+footer strong { color: var(--gold); }
+footer a { color: var(--gold); text-decoration: none; }
+.footer-names { color: rgba(255,255,255,0.65); font-size: 13px; margin: 0.5rem 0 1rem; font-family: 'Playfair Display', serif; font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Vietnam <span>2026</span></div>
+  <a href="#overview">Overview</a>
+  <a href="#checklist">Checklist</a>
+  <a href="#costs">Costs</a>
+  <a href="#itinerary">Itinerary</a>
+  <a href="#flights">Flights</a>
+  <a href="#hotels">Hotels</a>
+  <a href="#notes">Notes</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="overview">
+  <div class="hero-deco">VIETNAM</div>
+  <div style="position:relative;z-index:1;">
+    <div class="hero-eyebrow">Trip Overview · August 2026</div>
+    <h1>Heritage Vietnam
+      <em>Mr. Rohith &amp; Group</em>
+    </h1>
+    <div class="hero-ref">Booking Ref: PMQ0612 &nbsp;·&nbsp; Sales: Ms April &nbsp;·&nbsp; Phu Minh Quang Travel</div>
+    <div class="hero-pills">
+      <span class="pill pill-outline">📅 Aug 14 – 22, 2026</span>
+      <span class="pill pill-outline">9 Days · 8 Nights</span>
+      <span class="pill pill-gold">★★★★ · USD 754 / person</span>
+      <span class="pill pill-green">4 Travellers</span>
+    </div>
+    <div class="route-strip">
+      <span class="route-city">Hanoi</span><span class="route-arrow">→</span>
+      <span class="route-city">Sapa</span><span class="route-arrow">→</span>
+      <span class="route-city">Ninh Binh</span><span class="route-arrow">→</span>
+      <span class="route-city">Halong Bay</span><span class="route-arrow">→</span>
+      <span class="route-city">Da Nang</span><span class="route-arrow">→</span>
+      <span class="route-city">Hoi An</span><span class="route-arrow">→</span>
+      <span class="route-city">Ba Na Hills</span>
+    </div>
+  </div>
+</div>
+
+<!-- PASSENGERS BANNER -->
+<div class="pax-banner">
+  <div class="pax-inner">
+    <span class="pax-label">Travelling</span>
+    <div class="pax-card">
+      <span class="pax-flag">🇮🇳</span>
+      <div><div class="pax-name">Mr. Rohith Reddy Dokuru</div><div class="pax-origin">Hyderabad, India</div></div>
+    </div>
+    <div class="pax-card">
+      <span class="pax-flag">🇮🇳</span>
+      <div><div class="pax-name">Mr. Sanjay Kumar Pagidipally</div><div class="pax-origin">Hyderabad, India</div></div>
+    </div>
+    <div class="pax-card">
+      <span class="pax-flag">🇦🇺</span>
+      <div><div class="pax-name">Mr. Sai Krishna Adepu</div><div class="pax-origin">Adelaide, Australia</div></div>
+    </div>
+    <div class="pax-card">
+      <span class="pax-flag">🇦🇺</span>
+      <div><div class="pax-name">Mr. Revanth Gupta Thanuku</div><div class="pax-origin">Adelaide, Australia</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- GLANCE -->
+<div class="container">
+  <div class="section-label">At a Glance</div>
+  <div class="section-title">Your Trip in Numbers</div>
+  <div class="glance-grid">
+    <div class="glance-card"><span class="glance-icon">🗓️</span><div class="glance-val">9</div><div class="glance-lbl">Days</div></div>
+    <div class="glance-card"><span class="glance-icon">👥</span><div class="glance-val">4</div><div class="glance-lbl">Travellers</div></div>
+    <div class="glance-card"><span class="glance-icon">🏨</span><div class="glance-val">4 + 1</div><div class="glance-lbl">Hotels + Cruise</div></div>
+    <div class="glance-card"><span class="glance-icon">💵</span><div class="glance-val">USD 3,016</div><div class="glance-lbl">Package Cost</div></div>
+    <div class="glance-card"><span class="glance-icon">🍽️</span><div class="glance-val">8B · 2L · 1D</div><div class="glance-lbl">Meals Included</div></div>
+    <div class="glance-card"><span class="glance-icon">🚗</span><div class="glance-val">Private</div><div class="glance-lbl">All Transfers</div></div>
+    <div class="glance-card"><span class="glance-icon">📍</span><div class="glance-val">7</div><div class="glance-lbl">Destinations</div></div>
+    <div class="glance-card"><span class="glance-icon">🎫</span><div class="glance-val">PMQ0612</div><div class="glance-lbl">Booking Ref</div></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- CHECKLIST -->
+<div class="container" id="checklist">
+  <div class="section-label">Pre-Trip Actions</div>
+  <div class="section-title">Action Checklist</div>
+  <div class="progress-wrap">
+    <div class="progress-stat"><div class="num" id="done-count">0</div><div class="lbl">Done</div></div>
+    <div class="progress-stat"><div class="num" id="total-count" style="color:rgba(255,255,255,0.4)">0</div><div class="lbl">Total</div></div>
+    <div class="progress-bar-container">
+      <div class="progress-bar-text" id="progress-text">Loading...</div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="prog-fill" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <div class="checklist-group">
+    <div class="cg-label cg-done">✓ Completed</div>
+    <div class="check-item done" data-id="deposit"><div class="checkbox">✓</div><div class="ci-body"><div class="ci-title">50% deposit paid — USD 1,508</div><div class="ci-sub">Paid Jun 14 via VND bank transfer to Phu Minh Quang Travel. Keep receipt.</div></div></div>
+    <div class="check-item done" data-id="evisa"><div class="checkbox">✓</div><div class="ci-body"><div class="ci-title">Vietnam e-Visa applied for all 4 pax</div><div class="ci-sub">INR 4,600 per person (INR 18,400 total) paid via agent. Awaiting approval — print copies before travel.</div></div></div>
+    <div class="check-item done" data-id="mel"><div class="checkbox">✓</div><div class="ci-body"><div class="ci-title">Verified Melbourne (MEL) airport code on Australian tickets</div><div class="ci-sub">Confirmed — was a typo only, actual tickets are correct.</div></div></div>
+    <div class="check-item done" data-id="rate"><div class="checkbox">✓</div><div class="ci-body"><div class="ci-title">USD 754/person rate locked by April</div><div class="ci-sub">Confirmed despite Jun 15 validity expiry. Verbal confirmation received from April.</div></div></div>
+    <div class="check-item done" data-id="payment2"><div class="checkbox">✓</div><div class="ci-body"><div class="ci-title">Second payment terms clarified</div><div class="ci-sub">USD 1,508 due Aug 19 in Da Nang — cash or VND bank transfer (same account as 1st payment).</div></div></div>
+    <div class="check-item done" data-id="domestic"><div class="checkbox">✓</div><div class="ci-body"><div class="ci-title">Domestic flight HAN → DAD booked — VN6071</div><div class="ci-sub">Ref: FR3H6M · Aug 19 · Departs 18:20 → Arrives 19:50 · Terminal 1 both ends · AUD 395.60 total (4 pax)</div></div></div>
+  </div>
+
+  <div class="checklist-group">
+    <div class="cg-label" style="background:#fdf0f0;color:#8b1a1a;border:1px solid #e8b0b0;">🚨 Action This Week</div>
+    <div class="check-item" data-id="bridging"><div class="checkbox"></div><div class="ci-body"><div class="ci-title">⚡ Revanth — Apply for Bridging Visa B (BVB) NOW — deadline by July 2 at latest</div><div class="ci-sub">Current processing for Indian passport holders: 4–6 weeks (manual integrity checks apply). Must be GRANTED before departing Adelaide on Aug 13 — apply this week. Fee: AUD 190 non-refundable. Via ImmiAccount → include Statement of Reason (holiday) + confirmed flight itinerary. If BVA expires outside Australia re-entry is not possible.</div></div></div>
+  </div>
+
+  <div class="checklist-group">
+    <div class="cg-label cg-soon">⏰ Before August 1</div>
+    <div class="check-item" data-id="evisa-confirm"><div class="checkbox"></div><div class="ci-body"><div class="ci-title">Confirm e-Visa approved for all 4 pax + print copies</div><div class="ci-sub">Check approval status. Print hard copies — agent recommends for smooth immigration at Noi Bai.</div></div></div>
+    <div class="check-item" data-id="insurance"><div class="checkbox"></div><div class="ci-body"><div class="ci-title">Arrange travel insurance for all 4 pax</div><div class="ci-sub">Compulsory per itinerary but excluded from package. Must cover medical + trip cancellation.</div></div></div>
+  </div>
+
+  <div class="checklist-group">
+    <div class="cg-label cg-pre">🧳 Before Departure — Aug 14</div>
+    <div class="check-item" data-id="tips"><div class="checkbox"></div><div class="ci-body"><div class="ci-title">Carry USD 160+ cash for compulsory tips</div><div class="ci-sub">USD 5/person/day × 4 pax × ~8 tour days = USD 160. Compulsory per itinerary.</div></div></div>
+    <div class="check-item" data-id="vnd"><div class="checkbox"></div><div class="ci-body"><div class="ci-title">Carry VND cash for Hoi An entry + personal expenses</div><div class="ci-sub">Hoi An entry excluded from package. Also cruise drinks, snacks, shopping, optional activities.</div></div></div>
+    <div class="check-item" data-id="brief"><div class="checkbox"></div><div class="ci-body"><div class="ci-title">Brief all 4 pax on excluded items</div><div class="ci-sub">Drinks on cruise (extra charge), Hoi An entry, scuba diving, Ba Na Hills wax museum / 10D cinema, early check-in/late checkout fees.</div></div></div>
+    <div class="check-item" data-id="mel-brief"><div class="checkbox"></div><div class="ci-body"><div class="ci-title">Brief Sai &amp; Revanth on Melbourne self-transfer risk</div><div class="ci-sub">Different terminals. Collect &amp; re-check baggage. ~3h 45m window. QF-238 + VN-778 both non-refundable. Leave Adelaide early.</div></div></div>
+    <div class="check-item" data-id="passport"><div class="checkbox"></div><div class="ci-body"><div class="ci-title">Check all 4 passports valid until Feb 22, 2027 minimum</div><div class="ci-sub">6-month rule from return date Aug 22, 2026. Check Rohith, Sanjay, Sai &amp; Revanth.</div></div></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- COSTS -->
+<div class="container" id="costs">
+  <div class="section-label">Full Trip Financials</div>
+  <div class="section-title">Cost Breakdown — Per Passenger</div>
+
+  <div class="rates-bar" id="rates-bar">
+    <span>💱 Live rates:</span>
+    <strong id="r-usd-inr">Loading...</strong>
+    <span class="dot">·</span>
+    <strong id="r-aud-inr">Loading...</strong>
+    <span class="dot">·</span>
+    <strong id="r-usd-aud">Loading...</strong>
+    <span style="margin-left:auto;font-size:11px;opacity:0.5;" id="r-time"></span>
+  </div>
+
+  <div class="cost-wrap">
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th style="width:22%">Cost Item</th>
+          <th style="width:13%">Total Paid</th>
+          <th style="width:16%;text-align:center">Rohith 🇮🇳<br><span style="font-weight:400;font-size:10px;opacity:0.7;">Hyderabad</span></th>
+          <th style="width:16%;text-align:center">Sanjay 🇮🇳<br><span style="font-weight:400;font-size:10px;opacity:0.7;">Hyderabad</span></th>
+          <th style="width:16%;text-align:center">Sai 🇦🇺<br><span style="font-weight:400;font-size:10px;opacity:0.7;">Adelaide</span></th>
+          <th style="width:16%;text-align:center">Revanth 🇦🇺<br><span style="font-weight:400;font-size:10px;opacity:0.7;">Adelaide</span></th>
+        </tr>
+        <tr class="pax-header">
+          <th class="th-item">Shared / Individual</th>
+          <th class="th-total-paid">Currency Paid</th>
+          <th class="th-india" colspan="2">🇮🇳 India Pax — INR</th>
+          <th class="th-aus" colspan="2">🇦🇺 Australia Pax — AUD / INR</th>
+        </tr>
+      </thead>
+      <tbody id="cost-tbody">
+        <tr><td colspan="6" style="text-align:center;padding:24px;color:#aaa;">Loading costs...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note-card info" style="margin-top:1rem;">
+    <div class="note-icon">ℹ️</div>
+    <div>All conversions use live mid-market rates fetched at page load. Actual bank/transfer rates may differ slightly. Travel insurance to be added once arranged. Tips are an estimate based on 8 tour days.</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ITINERARY -->
+<div class="container" id="itinerary">
+  <div class="section-label">Day by Day</div>
+  <div class="section-title">Trip Itinerary</div>
+  <div id="days-container"></div>
+</div>
+
+<hr class="divider">
+
+<!-- FLIGHTS -->
+<div class="container" id="flights">
+  <div class="section-label">Getting There &amp; Back</div>
+  <div class="section-title">Flight Details</div>
+
+  <div class="flight-section">
+    <div class="flight-section-title">✈ Outbound — Rohith &amp; Sanjay (Hyderabad → Hanoi)</div>
+    <div class="two-col">
+      <div class="flight-card">
+        <div class="fc-header">IndiGo · 6E-6025 · Aug 13</div>
+        <div class="flight-route">
+          <div><div class="ap-code">HYD</div><div class="ap-city">Hyderabad</div></div>
+          <div class="route-mid"><div class="route-bar"></div><div class="route-dur">~2h 30m</div></div>
+          <div><div class="ap-code">DEL</div><div class="ap-city">Delhi</div></div>
+        </div>
+        <div class="fd">Departs <strong>23:50</strong> → Arrives <strong>02:20+1</strong></div>
+        <div class="fd">Baggage: <strong>30 KG</strong></div>
+      </div>
+      <div class="flight-card">
+        <div class="fc-header">IndiGo · 6E-1633 · Aug 14</div>
+        <div class="flight-route">
+          <div><div class="ap-code">DEL</div><div class="ap-city">Delhi</div></div>
+          <div class="route-mid"><div class="route-bar"></div><div class="route-dur">~5h 40m</div></div>
+          <div><div class="ap-code">HAN</div><div class="ap-city">Hanoi</div></div>
+        </div>
+        <div class="fd">Departs <strong>05:00</strong> → Arrives <strong>10:40</strong></div>
+        <div class="fd">Price: <strong>INR 22,000/pax</strong> · 30 KG · Total: INR 44,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flight-section">
+    <div class="flight-section-title">✈ Outbound — Sai &amp; Revanth (Adelaide → Hanoi)</div>
+    <div class="two-col">
+      <div class="flight-card">
+        <div class="fc-header">Virgin Australia · QF-238 · Aug 13</div>
+        <div class="flight-route">
+          <div><div class="ap-code">ADL</div><div class="ap-city">Adelaide</div></div>
+          <div class="route-mid"><div class="route-bar"></div><div class="route-dur">~2h</div></div>
+          <div><div class="ap-code">MEL</div><div class="ap-city">Melbourne</div></div>
+        </div>
+        <div class="fd">Departs <strong>18:50</strong> → Arrives <strong>20:40</strong></div>
+        <div class="fc-warn">⚠️ Self-transfer — different terminals. Collect &amp; re-check baggage. ~3h 45m window before VN-778. Both flights non-refundable.</div>
+      </div>
+      <div class="flight-card">
+        <div class="fc-header">Vietnam Airlines · VN-778 · Aug 14</div>
+        <div class="flight-route">
+          <div><div class="ap-code">MEL</div><div class="ap-city">Melbourne</div></div>
+          <div class="route-mid"><div class="route-bar"></div><div class="route-dur">~9h</div></div>
+          <div><div class="ap-code">HAN</div><div class="ap-city">Hanoi</div></div>
+        </div>
+        <div class="fd">Departs <strong>00:25</strong> → Arrives <strong>07:05</strong></div>
+        <div class="fd">Price: <strong>INR 54,000/pax</strong> · 23 KG · Non-refundable</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flight-section">
+    <div class="flight-section-title">✈ Domestic — All 4 Pax (Hanoi → Da Nang · Day 6)</div>
+    <div style="max-width:460px;">
+      <div class="flight-card">
+        <div class="fc-header">Vietnam Airlines · VN6071 · Aug 19 <span class="fc-confirmed">✅ Confirmed</span></div>
+        <div class="flight-route">
+          <div><div class="ap-code">HAN</div><div class="ap-city">Noi Bai T1</div></div>
+          <div class="route-mid"><div class="route-bar"></div><div class="route-dur">~1h 30m</div></div>
+          <div><div class="ap-code">DAD</div><div class="ap-city">Da Nang T1</div></div>
+        </div>
+        <div class="fd">Departs <strong>18:20</strong> → Arrives <strong>19:50</strong></div>
+        <div class="fd">Price: <strong>AUD 395.60 total</strong> (4 pax) · ~AUD 98.90/pax</div>
+        <div class="fc-info">Booking Ref: <strong>FR3H6M</strong> · Terminal 1 both ends</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flight-section">
+    <div class="flight-section-title">✈ Return — Rohith &amp; Sanjay (Da Nang → Hyderabad)</div>
+    <div class="two-col">
+      <div class="flight-card">
+        <div class="fc-header">VietJet · VN-0633 · Aug 22</div>
+        <div class="flight-route">
+          <div><div class="ap-code">DAD</div><div class="ap-city">Da Nang</div></div>
+          <div class="route-mid"><div class="route-bar"></div><div class="route-dur">~1h 20m</div></div>
+          <div><div class="ap-code">HAN</div><div class="ap-city">Hanoi</div></div>
+        </div>
+        <div class="fd">Departs <strong>14:50</strong> → Arrives <strong>16:10</strong> · Non-refundable</div>
+      </div>
+      <div class="flight-card">
+        <div class="fc-header">VietJet · VN-1803 · Aug 22</div>
+        <div class="flight-route">
+          <div><div class="ap-code">HAN</div><div class="ap-city">Hanoi</div></div>
+          <div class="route-mid"><div class="route-bar"></div><div class="route-dur">~4h 50m</div></div>
+          <div><div class="ap-code">HYD</div><div class="ap-city">Hyderabad</div></div>
+        </div>
+        <div class="fd">Departs <strong>19:45</strong> → Arrives <strong>22:35</strong></div>
+        <div class="fd">Price: <strong>INR 21,500/pax</strong> · 20 KG · Non-refundable · Total: INR 43,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flight-section">
+    <div class="flight-section-title">✈ Return — Sai &amp; Revanth (Da Nang → Adelaide)</div>
+    <div class="two-col">
+      <div class="flight-card">
+        <div class="fc-header">Malaysia Airlines · MH-747 · Aug 22</div>
+        <div class="flight-route">
+          <div><div class="ap-code">DAD</div><div class="ap-city">Da Nang</div></div>
+          <div class="route-mid"><div class="route-bar"></div><div class="route-dur">~3h 55m</div></div>
+          <div><div class="ap-code">KUL</div><div class="ap-city">Kuala Lumpur</div></div>
+        </div>
+        <div class="fd">Departs <strong>11:25</strong> → Arrives <strong>15:20</strong></div>
+        <div class="fc-warn">⚠️ Must leave Blue Sun hotel by ~09:00. Request early checkout or luggage storage in advance.</div>
+      </div>
+      <div class="flight-card">
+        <div class="fc-header">Malaysia Airlines · MH-139 · Aug 22</div>
+        <div class="flight-route">
+          <div><div class="ap-code">KUL</div><div class="ap-city">Kuala Lumpur</div></div>
+          <div class="route-mid"><div class="route-bar"></div><div class="route-dur">7h 5m layover · ~7h</div></div>
+          <div><div class="ap-code">ADL</div><div class="ap-city">Adelaide</div></div>
+        </div>
+        <div class="fd">Departs <strong>22:25</strong> → Arrives <strong>07:00+1</strong></div>
+        <div class="fd">Price: <strong>INR 53,500/pax</strong> · 25 KG · Total: INR 107,000</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- HOTELS -->
+<div class="container" id="hotels">
+  <div class="section-label">Where You're Staying</div>
+  <div class="section-title">Accommodation</div>
+  <div class="hotels-grid">
+    <div class="hotel-card hc-sapa">
+      <div class="hotel-city">📍 Sapa · 2 Nights</div>
+      <div class="hotel-name">Charm Sapa Hotel</div>
+      <div class="hotel-room">02 × Superior / Deluxe Room · 27m²</div>
+      <div class="hotel-dates"><span>Check-in: Aug 14</span><span>Check-out: Aug 16</span></div>
+      <span class="upgrade-badge">⬆ Upgraded to Deluxe</span>
+    </div>
+    <div class="hotel-card hc-hanoi">
+      <div class="hotel-city">📍 Hanoi · 2 Nights</div>
+      <div class="hotel-name">Hanoi Pearl</div>
+      <div class="hotel-room">02 × Deluxe Double City View · 25m²</div>
+      <div class="hotel-dates"><span>Check-in: Aug 16</span><span>Check-out: Aug 18</span></div>
+    </div>
+    <div class="hotel-card hc-halong">
+      <div class="hotel-city">🚢 Halong Bay · 1 Night</div>
+      <div class="hotel-name">Verdure Grandeur Cruise</div>
+      <div class="hotel-room">02 × Deluxe Twin Cabin · 25m²</div>
+      <div class="hotel-dates"><span>Embark: Aug 18</span><span>Disembark: Aug 19</span></div>
+    </div>
+    <div class="hotel-card hc-danang">
+      <div class="hotel-city">📍 Da Nang · 3 Nights</div>
+      <div class="hotel-name">Blue Sun Hotel</div>
+      <div class="hotel-room">02 × Deluxe Twin · 25m²</div>
+      <div class="hotel-dates"><span>Check-in: Aug 19</span><span>Check-out: Aug 22</span></div>
+      <span class="upgrade-badge">⬆ Upgraded to Partial Sea View</span>
+    </div>
+  </div>
+  <div class="note-card info" style="margin-top:1rem;">
+    <div class="note-icon">ℹ️</div>
+    <div>Check-in: <strong>14:00</strong> · Check-out: <strong>12:00</strong>. Early check-in and late checkout are not included — request in advance, charges may apply.</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- NOTES -->
+<div class="container" id="notes">
+  <div class="section-label">Important Reminders</div>
+  <div class="section-title">Notes &amp; Exclusions</div>
+  <div class="notes-grid">
+    <div class="note-card warn"><div class="note-icon">🌧️</div><div><strong>August Monsoon:</strong> Heavy rain likely in Sapa &amp; Da Nang. Typhoons can disrupt Halong Bay cruises and close Fansipan cable car or Ba Na Hills. Check with April closer to travel.</div></div>
+    <div class="note-card warn"><div class="note-icon">🍹</div><div><strong>Drinks on Cruise:</strong> Not included. Beverages brought onboard will incur additional charges — budget for the bar on Day 5.</div></div>
+    <div class="note-card warn"><div class="note-icon">🏮</div><div><strong>Hoi An Ancient Town Entry:</strong> Excluded from package. Carry VND cash. Lantern boating also optional and excluded.</div></div>
+    <div class="note-card warn"><div class="note-icon">⏰</div><div><strong>Sai &amp; Revanth Departure (Aug 22):</strong> MH-747 departs 11:25 — must leave Blue Sun by ~09:00. Arrange early checkout or luggage storage in advance.</div></div>
+    <div class="note-card info"><div class="note-icon">🚌</div><div><strong>Cham Island (Day 7):</strong> Join group / shared tour — not private. Set expectations with all 4 pax accordingly.</div></div>
+    <div class="note-card info"><div class="note-icon">🎢</div><div><strong>Ba Na Hills Exclusions:</strong> Wax Museum, Wine Cellar, 10D Cinema, climbing &amp; coin games all excluded. Only 1 alpine coaster ride included.</div></div>
+    <div class="note-card tip"><div class="note-icon">⬆️</div><div><strong>Upgrades Confirmed by April:</strong> Rainbow slide Cat Cat ✓ · Alpine coaster Ba Na Hills 1 ride ✓ · Deluxe room Sapa Charm ✓ · Deluxe Partial Sea View Blue Sun ✓</div></div>
+    <div class="note-card tip"><div class="note-icon">🛂</div><div><strong>Passport Validity:</strong> All 4 passports must be valid until at least <strong>Feb 22, 2027</strong> — 6 months from return date Aug 22, 2026.</div></div>
+    <div class="note-card purple"><div class="note-icon">📋</div><div><strong>Cancellation Policy:</strong> 30+ days: 10% · 15–29 days: 25% · 8–14 days: 50% · Within 7 days: 100% of cost. All flights &amp; e-Visa fees are non-refundable.</div></div>
+    <div class="note-card purple"><div class="note-icon">💰</div><div><strong>Compulsory Tips:</strong> USD 5/person/day — carry approximately USD 160 in cash for the group across all tour days.</div></div>
+  </div>
+</div>
+
+<footer>
+  <strong>Heritage Vietnam 2026</strong>
+  <div class="footer-names">Rohith · Sanjay · Sai Krishna · Revanth</div>
+  Phu Minh Quang Travel · Booking PMQ0612 · Sales: Ms April<br>
+  <a href="mailto:director@phuminhquangtravel.com">director@phuminhquangtravel.com</a> &nbsp;·&nbsp; +84 236 7 307 797
+</footer>
+
+<script>
+// ── CHECKLIST ──────────────────────────────────────────────────────────────
+const items = document.querySelectorAll('.check-item');
+const saved = JSON.parse(localStorage.getItem('vn2026-v4') || '{}');
+items.forEach(item => {
+  const id = item.dataset.id;
+  const cb = item.querySelector('.checkbox');
+  if (id in saved) {
+    if (saved[id]) { item.classList.add('done'); cb.textContent = '✓'; }
+    else { item.classList.remove('done'); cb.textContent = ''; }
+  } else {
+    cb.textContent = item.classList.contains('done') ? '✓' : '';
+  }
+  item.addEventListener('click', () => {
+    item.classList.toggle('done');
+    cb.textContent = item.classList.contains('done') ? '✓' : '';
+    const s = {};
+    items.forEach(i => { s[i.dataset.id] = i.classList.contains('done'); });
+    localStorage.setItem('vn2026-v4', JSON.stringify(s));
+    updateProgress();
+  });
+});
+function updateProgress() {
+  const all = document.querySelectorAll('.check-item');
+  const done = document.querySelectorAll('.check-item.done');
+  const pct = Math.round((done.length / all.length) * 100);
+  document.getElementById('done-count').textContent = done.length;
+  document.getElementById('total-count').textContent = all.length;
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('progress-text').textContent = pct + '% complete — ' + (all.length - done.length) + ' items remaining';
+}
+updateProgress();
+
+// ── COST TABLE ──────────────────────────────────────────────────────────────
+async function buildCosts() {
+  // default rates
+  let usdInr = 94.31, audInr = 67.00;
+  try {
+    const r = await fetch('https://api.frankfurter.app/latest?from=USD&to=INR,AUD');
+    const d = await r.json();
+    usdInr = d.rates.INR;
+    const usdAud = d.rates.AUD;
+    audInr = usdInr / usdAud;
+  } catch(e) {}
+
+  const usdAud = usdInr / audInr;
+
+  document.getElementById('r-usd-inr').textContent = '1 USD = ₹' + usdInr.toFixed(2);
+  document.getElementById('r-aud-inr').textContent = '1 AUD = ₹' + audInr.toFixed(2);
+  document.getElementById('r-usd-aud').textContent = '1 USD = A$' + usdAud.toFixed(4);
+  document.getElementById('r-time').textContent = 'as of ' + new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}) + ' today';
+
+  // helpers
+  const fi = n => n === null ? '—' : '₹' + Math.round(n).toLocaleString('en-IN');
+  const fa = n => n === null ? '—' : 'A$' + n.toFixed(2);
+  const fiAud = (aud) => aud === null ? '—' : `${fa(aud)}<br><span style="font-size:11px;color:#888;">₹${Math.round(aud * audInr).toLocaleString('en-IN')}</span>`;
+
+  // package per pax in USD = 754
+  const pkgUSD = 754;
+  const pkgINR = pkgUSD * usdInr;
+  const pkgAUD = pkgUSD * usdAud;
+  const pay1INR = 1508/2 * usdInr; // per pax
+  const pay1AUD = 1508/2 * usdAud;
+  const pay2INR = pay1INR;
+  const pay2AUD = pay1AUD;
+
+  // e-visa per pax INR 4600
+  const evisaINR = 4600;
+  const evisaAUD = evisaINR / audInr;
+
+  // domestic per pax AUD 98.90
+  const domAUD = 98.90;
+  const domINR = domAUD * audInr;
+
+  // tips per pax USD 40
+  const tipsINR = 40 * usdInr;
+  const tipsAUD = 40 * usdAud;
+
+  // flights India per pax
+  const indOutINR = 22000;
+  const indRetINR = 21500;
+
+  // flights Aus per pax INR
+  const ausOutINR = 54000;
+  const ausRetINR = 53500;
+  const ausOutAUD = ausOutINR / audInr;
+  const ausRetAUD = ausRetINR / audInr;
+
+  // totals per pax
+  const indTotal = pkgINR + evisaINR + domINR + tipsINR + indOutINR + indRetINR;
+  const ausTotal = pkgAUD + evisaAUD + domAUD + tipsAUD + ausOutAUD + ausRetAUD;
+  const ausTotalINR = ausTotal * audInr;
+
+  const grandINR = indTotal * 2 + ausTotalINR * 2;
+
+  const sharedBadge = `<span class="badge" style="background:#e8f0ff;color:#1a3a7a;border:1px solid #b0c8f0;font-size:9px;">SHARED</span>`;
+  const indBadge = `<span class="badge" style="background:#fff0e8;color:#7a3a10;border:1px solid #f0c080;font-size:9px;">INDIA PAX</span>`;
+  const ausBadge = `<span class="badge" style="background:#e8f4ff;color:#1a3a7a;border:1px solid #90b8e8;font-size:9px;">AUS PAX</span>`;
+
+  const rows = `
+    <tr class="section-hdr"><td colspan="6">🌐 Shared Costs — Split equally across all 4 passengers</td></tr>
+
+    <tr>
+      <td class="item-col">Vietnam Package ${sharedBadge}<span class="badge b-paid">✅ Confirmed</span></td>
+      <td class="total-paid-col">USD 3,016</td>
+      <td class="num-col">${fi(pkgINR)}</td>
+      <td class="num-col">${fi(pkgINR)}</td>
+      <td class="num-col">${fiAud(pkgAUD)}</td>
+      <td class="num-col">${fiAud(pkgAUD)}</td>
+    </tr>
+    <tr class="sub-row">
+      <td class="item-col sub">— 1st payment paid Jun 14 <span class="badge b-paid">✅ Paid</span></td>
+      <td class="total-paid-col">USD 1,508</td>
+      <td class="num-col">${fi(pay1INR)}</td>
+      <td class="num-col">${fi(pay1INR)}</td>
+      <td class="num-col">${fiAud(pay1AUD)}</td>
+      <td class="num-col">${fiAud(pay1AUD)}</td>
+    </tr>
+    <tr class="sub-row due-row">
+      <td class="item-col sub">— 2nd payment due Aug 19 <span class="badge b-due">🔜 Due Aug 19</span></td>
+      <td class="total-paid-col">USD 1,508</td>
+      <td class="num-col">${fi(pay2INR)}</td>
+      <td class="num-col">${fi(pay2INR)}</td>
+      <td class="num-col">${fiAud(pay2AUD)}</td>
+      <td class="num-col">${fiAud(pay2AUD)}</td>
+    </tr>
+
+    <tr>
+      <td class="item-col">Vietnam e-Visa ${sharedBadge}<span class="badge b-paid">✅ Paid</span></td>
+      <td class="total-paid-col">INR 18,400</td>
+      <td class="num-col">${fi(evisaINR)}</td>
+      <td class="num-col">${fi(evisaINR)}</td>
+      <td class="num-col">${fiAud(evisaAUD)}</td>
+      <td class="num-col">${fiAud(evisaAUD)}</td>
+    </tr>
+
+    <tr>
+      <td class="item-col">Domestic VN6071 HAN→DAD ${sharedBadge}<span class="badge b-paid">✅ Paid</span></td>
+      <td class="total-paid-col">AUD 395.60</td>
+      <td class="num-col">${fi(domINR)}</td>
+      <td class="num-col">${fi(domINR)}</td>
+      <td class="num-col">${fiAud(domAUD)}</td>
+      <td class="num-col">${fiAud(domAUD)}</td>
+    </tr>
+
+    <tr>
+      <td class="item-col">Compulsory tips (est. 8 days) ${sharedBadge}<span class="badge b-est">💰 Cash</span></td>
+      <td class="total-paid-col">USD 160</td>
+      <td class="num-col">${fi(tipsINR)}</td>
+      <td class="num-col">${fi(tipsINR)}</td>
+      <td class="num-col">${fiAud(tipsAUD)}</td>
+      <td class="num-col">${fiAud(tipsAUD)}</td>
+    </tr>
+
+    <tr class="section-hdr"><td colspan="6">🇮🇳 India Pax Flights — Rohith &amp; Sanjay only</td></tr>
+
+    <tr>
+      <td class="item-col">Outbound HYD→DEL→HAN ${indBadge}<span class="badge b-paid">✅ Paid</span></td>
+      <td class="total-paid-col">—</td>
+      <td class="num-col">${fi(indOutINR)}</td>
+      <td class="num-col">${fi(indOutINR)}</td>
+      <td class="num-col" style="color:#ccc;">N/A</td>
+      <td class="num-col" style="color:#ccc;">N/A</td>
+    </tr>
+    <tr>
+      <td class="item-col">Return DAD→HAN→HYD ${indBadge}<span class="badge b-paid">✅ Paid</span></td>
+      <td class="total-paid-col">—</td>
+      <td class="num-col">${fi(indRetINR)}</td>
+      <td class="num-col">${fi(indRetINR)}</td>
+      <td class="num-col" style="color:#ccc;">N/A</td>
+      <td class="num-col" style="color:#ccc;">N/A</td>
+    </tr>
+
+    <tr class="section-hdr"><td colspan="6">🇦🇺 Australia Pax Flights — Sai &amp; Revanth only</td></tr>
+
+    <tr>
+      <td class="item-col">Outbound ADL→MEL→HAN ${ausBadge}<span class="badge b-paid">✅ Paid</span></td>
+      <td class="total-paid-col">—</td>
+      <td class="num-col" style="color:#ccc;">N/A</td>
+      <td class="num-col" style="color:#ccc;">N/A</td>
+      <td class="num-col">${fiAud(ausOutAUD)}</td>
+      <td class="num-col">${fiAud(ausOutAUD)}</td>
+    </tr>
+    <tr>
+      <td class="item-col">Return DAD→KUL→ADL ${ausBadge}<span class="badge b-paid">✅ Paid</span></td>
+      <td class="total-paid-col">—</td>
+      <td class="num-col" style="color:#ccc;">N/A</td>
+      <td class="num-col" style="color:#ccc;">N/A</td>
+      <td class="num-col">${fiAud(ausRetAUD)}</td>
+      <td class="num-col">${fiAud(ausRetAUD)}</td>
+    </tr>
+
+    <tr class="section-hdr"><td colspan="6">⏳ Pending</td></tr>
+    <tr class="tbd-row">
+      <td class="item-col">Travel insurance (4 pax) <span class="badge b-tbd">⏳ TBD</span></td>
+      <td class="total-paid-col">TBD</td>
+      <td class="num-col" style="color:#b83232;font-style:italic;">TBD</td>
+      <td class="num-col" style="color:#b83232;font-style:italic;">TBD</td>
+      <td class="num-col" style="color:#b83232;font-style:italic;">TBD</td>
+      <td class="num-col" style="color:#b83232;font-style:italic;">TBD</td>
+    </tr>
+
+    <tr class="summary-row">
+      <td class="item-col">Subtotal per passenger (excl. insurance)</td>
+      <td class="total-paid-col"></td>
+      <td class="num-col">${fi(indTotal)}</td>
+      <td class="num-col">${fi(indTotal)}</td>
+      <td class="num-col">${fiAud(ausTotal)}</td>
+      <td class="num-col">${fiAud(ausTotal)}</td>
+    </tr>
+
+    <tr class="grand-row">
+      <td>Grand Total — All 4 Pax (INR)</td>
+      <td></td>
+      <td class="num-col" colspan="2" style="color:var(--gold);font-size:15px;">₹${Math.round(indTotal*2).toLocaleString('en-IN')}</td>
+      <td class="num-col" colspan="2" style="color:#7dd4fc;font-size:15px;">₹${Math.round(ausTotalINR*2).toLocaleString('en-IN')}</td>
+    </tr>
+    <tr style="background:var(--navy);border-top:1px solid rgba(255,255,255,0.1);">
+      <td colspan="2" style="padding:12px 14px;color:rgba(255,255,255,0.6);font-size:12px;">Combined total all 4 pax (excl. insurance)</td>
+      <td colspan="4" style="text-align:center;padding:12px 14px;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--gold);">₹${Math.round(grandINR).toLocaleString('en-IN')}</td>
+    </tr>
+  `;
+
+  document.getElementById('cost-tbody').innerHTML = rows;
+}
+buildCosts();
+
+// ── ITINERARY ──────────────────────────────────────────────────────────────
+const days = [
+  { n:1, date:'Aug 14 (Fri)', title:'Hanoi Arrival → Sleeping Bus to Sapa', loc:'Hanoi → Sapa', meals:'No meals', tag:'tag-travel', tagLabel:'Transit', items:['Airport pickup by private car (7 seater) for all 4 pax','⚠️ Sai &amp; Revanth land 07:05 — coordinate early pickup with April','⚠️ Rohith &amp; Sanjay land 10:40 — ~4 hr window for immigration + transfer','Sleeping bus departs 15:00 to Sapa (~7–8 hrs, single cabin)','Hotel transit drop on arrival in Sapa · Free leisure'] },
+  { n:2, date:'Aug 15 (Sat)', title:'Fansipan Peak + Rong May Glass Bridge', loc:'Sapa', meals:'Breakfast', tag:'tag-sapa', tagLabel:'Sapa', items:['Breakfast at hotel','08:00 — Private car + English-speaking guide to Fansipan Cable Car','World\'s most modern 3-wire cable car system (30 pax per cabin)','Summit at 3,143m — Roof of Indochina ✓','Rong May (Dragon) Glass Bridge — transparent floor over valley ✓','Cable car ticket + mountain train included ✓','⚠️ Muong Hoa Funicular 2-way tickets NOT included — extra cost'] },
+  { n:3, date:'Aug 16 (Sun)', title:'Cat Cat Village + Ban Mong Alpine Coaster → Hanoi', loc:'Sapa → Hanoi', meals:'Breakfast', tag:'tag-travel', tagLabel:'Transit', items:['08:00 checkout · Ban Mong village — alpine coaster 1 ride ✓','Hike to Cat Cat Village — Black H\'mong tribe, rice paddies, waterfall','Rainbow slide at Cat Cat ✓','15:00 — Board overnight sleeping bus back to Hanoi'] },
+  { n:4, date:'Aug 17 (Mon)', title:'Day Tour — Ninh Binh (Trang An + Mua Cave)', loc:'Hanoi', meals:'Breakfast', tag:'tag-hanoi', tagLabel:'Hanoi', items:['Breakfast at hotel · 09:00 — Depart for Ninh Binh','Trang An — UNESCO World Heritage Site · Kong: Skull Island (2016) filming location','Boat trip: Sang, Toi, Nau Ruou caves + green river scenery','Mua Cave — climb ~500 steps to Lying Dragon Mountain panoramic view','16:00 — Return to Hanoi hotel'] },
+  { n:5, date:'Aug 18 (Tue)', title:'Hanoi → Halong Bay Overnight Cruise', loc:'Hanoi → Halong Bay', meals:'Breakfast + Lunch + Dinner', tag:'tag-halong', tagLabel:'Halong Bay', items:['Breakfast + checkout at Hanoi Pearl','07:40–08:00 — Shuttle bus pickup from Old Quarter','13:00 — Buffet lunch onboard Verdure Grandeur Cruise','14:30–16:00 — Luon Cave by kayak/bamboo boat (optional)','16:00–17:00 — Ti Top Island hike + swim in Halong Bay','17:30 — Sunset happy hour at bar','18:30 — Cooking class on deck (weather permitting)','19:15 — Dinner onboard · 22:30 — Overnight on cruise','⚠️ Drinks NOT included — extra charge if brought onboard'] },
+  { n:6, date:'Aug 19 (Wed)', title:'Cruise Checkout → Fly to Da Nang', loc:'Halong Bay → Da Nang', meals:'Breakfast', tag:'tag-travel', tagLabel:'Transit', items:['06:00 — Tai Chi on sundeck · 07:00 — Light breakfast on cruise','07:30–08:30 — Sung Sot Cave (largest in Halong Bay)','10:45 — Disembark Tuan Chau Marina','Private car to Noi Bai Airport Hanoi','✈ VN6071 · Departs HAN 18:20 → Arrives DAD 19:50 · Ref: FR3H6M','Check in Blue Sun Hotel Da Nang','💰 2nd payment USD 1,508 due today — cash or VND bank transfer'] },
+  { n:7, date:'Aug 20 (Thu)', title:'Cham Island + Coconut Forest + Hoi An', loc:'Da Nang', meals:'Breakfast + Local Lunch', tag:'tag-danang', tagLabel:'Da Nang', items:['Breakfast at hotel · 07:30 — Car to Cua Dai Pier','09:15 — Speedboat to Cham Island','Bai Lang: Biosphere Reserve, Ancient Well, Hai Tang Pagoda','11:00 — Snorkeling at Bai Ong (coral + tropical fish) ✓','12:00 — Lunch at Bai Ong restaurant ✓','⚠️ CHAM ISLAND IS GROUP TOUR — not private · Scuba diving excluded','16:00 — Coconut Forest basket boat + crab catching ✓','17:00 — Hoi An Ancient Town: night market, lanterns, Bai Choi singing','⚠️ Hoi An entry fee NOT included — carry VND cash','21:00 — Return to Da Nang hotel'] },
+  { n:8, date:'Aug 21 (Fri)', title:'Ba Na Hills + Golden Bridge', loc:'Da Nang', meals:'Breakfast', tag:'tag-danang', tagLabel:'Da Nang', items:['Breakfast at hotel · 08:00 — Private car to Ba Na Hills','09:00 — UNESCO record cable car to summit','Golden Bridge — held by giant stone hands ✓','L\'Jardin French architecture zone · Linh Ung Pagoda + 27m Buddha','Alpine coaster 1 ride ✓','⚠️ Wax Museum, Wine Cellar, 10D Cinema, coin games NOT included','16:30–17:00 — Return to hotel'] },
+  { n:9, date:'Aug 22 (Sat)', title:'Da Nang Departure — Safe Travels!', loc:'Da Nang → Home', meals:'Breakfast', tag:'tag-travel', tagLabel:'Departure', items:['Breakfast + hotel checkout','⚠️ Sai &amp; Revanth: MH-747 departs 11:25 — leave hotel by 09:00','Rohith &amp; Sanjay: VN-0633 departs 14:50 — standard departure OK','Private car airport drop-off for both groups','Tour ends — we hope you had an amazing time! 🎉'] },
+];
+const dc = document.getElementById('days-container');
+days.forEach((d, i) => {
+  const card = document.createElement('div');
+  card.className = 'day-card' + (i===0?' open':'');
+  card.innerHTML = `
+    <div class="day-header" onclick="toggleDay(this)">
+      <div class="day-num">${d.n}</div>
+      <div class="day-info">
+        <div class="day-date">${d.date}</div>
+        <div class="day-title">${d.title}</div>
+        <div class="day-meta">${d.loc}${d.meals!=='No meals'?' · <span style="color:var(--gold);font-weight:600;">'+d.meals+'</span>':''}</div>
+      </div>
+      <span class="day-tag ${d.tag}">${d.tagLabel}</span>
+      <div class="day-chevron"${i===0?' style="transform:rotate(180deg)"':''}>▾</div>
+    </div>
+    <div class="day-body"><ul>${d.items.map(x=>`<li>${x}</li>`).join('')}</ul></div>`;
+  dc.appendChild(card);
+});
+function toggleDay(h) {
+  const card = h.parentElement;
+  card.classList.toggle('open');
+  h.querySelector('.day-chevron').style.transform = card.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+}
+
+// ── NAV ACTIVE ──────────────────────────────────────────────────────────────
+window.addEventListener('scroll', () => {
+  let cur = '';
+  document.querySelectorAll('[id]').forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
+  document.querySelectorAll('nav a').forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + cur); });
+});
+</script>
+</body>
+</html>
