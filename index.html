@@ -320,6 +320,196 @@ nav a:hover, nav a.active { color: var(--white); border-bottom-color: var(--gold
 .note-card.purple { background: var(--purple-light); border: 1px solid #c8b8f0; color: #3a2070; }
 .note-icon { font-size: 17px; flex-shrink: 0; margin-top: 1px; }
 
+/* ── FOOD GUIDE ── */
+.food-tabs { display: flex; gap: 6px; margin-bottom: 2rem; flex-wrap: wrap; }
+.food-tab {
+  padding: 8px 18px; border-radius: 99px; font-size: 13px; font-weight: 600;
+  cursor: pointer; border: 1.5px solid var(--border); background: var(--white);
+  color: var(--ink-mid); transition: all 0.2s; letter-spacing: 0.02em;
+}
+.food-tab:hover { border-color: var(--navy); color: var(--navy); }
+.food-tab.active { background: var(--navy); color: var(--white); border-color: var(--navy); box-shadow: 0 3px 10px rgba(28,43,74,0.2); }
+.food-panel { display: none; }
+.food-panel.active { display: block; }
+
+/* dietary legend */
+.diet-legend { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1.75rem; padding: 12px 16px; background: var(--white); border: 1px solid var(--border); border-radius: 10px; }
+.diet-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 99px; }
+.dp-all { background: #edf6f1; color: #1e6b45; border: 1px solid #b0d9c0; }
+.dp-chick { background: #fff8e6; color: #7a5010; border: 1px solid #f0d080; }
+.dp-veg { background: #e8f4ff; color: #1a3a7a; border: 1px solid #90b8e8; }
+
+/* city block */
+.food-city-block { margin-bottom: 2rem; }
+.food-city-header {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 16px; border-radius: 10px; margin-bottom: 1rem;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.04em;
+}
+.fch-sapa { background: var(--green-light); color: var(--green); border: 1px solid #b0d9c0; }
+.fch-hanoi { background: var(--navy-light); color: var(--navy); border: 1px solid #c0cde8; }
+.fch-danang { background: var(--red-light); color: var(--red); border: 1px solid #e8b0b0; }
+.fch-hoian { background: var(--purple-light); color: var(--purple); border: 1px solid #c8b8f0; }
+
+/* restaurant cards */
+.rest-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.rest-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+  padding: 16px; transition: box-shadow 0.2s, transform 0.2s; position: relative;
+}
+.rest-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.rest-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+.rest-name { font-size: 14px; font-weight: 700; color: var(--ink); line-height: 1.3; }
+.rest-rating { display: flex; align-items: center; gap: 3px; font-size: 12px; font-weight: 600; color: var(--gold); white-space: nowrap; }
+.rest-diet { margin-bottom: 6px; }
+.rest-cuisine { font-size: 11px; color: var(--ink-light); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em; }
+.rest-dishes { font-size: 12px; color: var(--ink-mid); margin-bottom: 8px; line-height: 1.5; }
+.rest-dishes strong { color: var(--ink); }
+.rest-meta { font-size: 11px; color: var(--ink-light); border-top: 1px solid var(--border); padding-top: 7px; line-height: 1.6; }
+.rest-warning { background: #fff8e6; border: 1px solid #f0d080; border-radius: 6px; padding: 6px 10px; font-size: 11px; color: #7a5010; margin-top: 8px; }
+
+/* dish cards */
+.dish-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
+.dish-card { background: var(--white); border: 1px solid var(--border); border-radius: 11px; padding: 14px; }
+.dish-name { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.dish-vn { font-size: 11px; color: var(--gold); font-style: italic; margin-bottom: 6px; }
+.dish-desc { font-size: 12px; color: var(--ink-mid); line-height: 1.5; margin-bottom: 8px; }
+.dish-where { font-size: 11px; color: var(--ink-light); }
+
+/* fast food table */
+.ff-table { width: 100%; border-collapse: collapse; background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; font-size: 13px; }
+.ff-table th { background: var(--navy); color: rgba(255,255,255,0.85); font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; padding: 11px 16px; text-align: center; }
+.ff-table th:first-child { text-align: left; }
+.ff-table td { padding: 11px 16px; border-bottom: 1px solid var(--border); text-align: center; font-size: 13px; }
+.ff-table td:first-child { text-align: left; font-weight: 600; color: var(--ink); }
+.ff-table tr:last-child td { border-bottom: none; }
+.ff-table tr:hover td { background: #faf9f6; }
+.ff-avail { color: #1e6b45; font-size: 16px; }
+.ff-limited { color: #b87020; font-size: 13px; font-weight: 600; }
+.ff-no { color: #aaa; font-size: 16px; }
+
+/* snack cards */
+.snack-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; }
+.snack-card { background: var(--white); border: 1px solid var(--border); border-radius: 11px; padding: 14px; }
+.snack-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
+.snack-name { font-size: 13px; font-weight: 700; color: var(--ink); }
+.snack-vn { font-size: 11px; color: var(--gold); font-style: italic; margin-bottom: 5px; }
+.snack-desc { font-size: 12px; color: var(--ink-mid); line-height: 1.5; margin-bottom: 6px; }
+.snack-where { font-size: 11px; color: var(--ink-light); }
+.snack-warn { background: #fdf0f0; border: 1px solid #e8b0b0; border-radius: 5px; padding: 4px 8px; font-size: 10px; color: var(--red); margin-top: 6px; }
+.price-tag { display: inline-block; background: var(--green-light); color: var(--green); font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 99px; margin-top: 4px; }
+
+/* ── MEAL PLANNER ── */
+.vnd-bar {
+  background: linear-gradient(90deg, #0e4a2e 0%, #1a6b42 100%);
+  border-radius: 10px; padding: 10px 18px; margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.vnd-bar .vnd-label { font-size: 11px; color: rgba(255,255,255,0.6); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+.vnd-bar .vnd-rate { font-size: 13px; font-weight: 700; color: #5ecf98; }
+.vnd-bar .vnd-dot { color: rgba(255,255,255,0.2); }
+.vnd-bar .vnd-time { font-size: 11px; color: rgba(255,255,255,0.4); margin-left: auto; }
+
+.phrase-box {
+  background: var(--white); border: 2px solid var(--red);
+  border-radius: 14px; padding: 1.5rem; margin-bottom: 2rem;
+}
+.phrase-box-title {
+  font-size: 13px; font-weight: 700; color: var(--red);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;
+}
+.phrase-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 8px; }
+.phrase-card {
+  border-radius: 8px; padding: 10px 14px;
+  border: 1px solid var(--border);
+}
+.phrase-card.p-veg { background: #fff0f0; border-color: #f0b0b0; }
+.phrase-card.p-chick { background: var(--gold-light); border-color: var(--gold-mid); }
+.phrase-card.p-all { background: var(--green-light); border-color: #b0d9c0; }
+.phrase-who { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px; }
+.phrase-card.p-veg .phrase-who { color: var(--red); }
+.phrase-card.p-chick .phrase-who { color: #7a5010; }
+.phrase-card.p-all .phrase-who { color: var(--green); }
+.phrase-viet { font-size: 16px; font-weight: 800; color: var(--red); display: block; margin-bottom: 2px; }
+.phrase-eng { font-size: 11px; color: var(--ink-light); }
+
+.meal-day-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 13px; margin-bottom: 8px; overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.meal-day-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+.meal-day-header {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px; cursor: pointer; transition: background 0.15s;
+}
+.meal-day-header:hover { background: var(--bg); }
+.meal-day-num {
+  width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; color: var(--white);
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+}
+.meal-day-info { flex: 1; }
+.meal-day-date { font-size: 10px; color: var(--gold); font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; }
+.meal-day-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-top: 2px; }
+.meal-badges { display: flex; gap: 5px; margin-top: 4px; flex-wrap: wrap; }
+.mbadge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 99px; }
+.mb-inc { background: var(--green-light); color: var(--green); border: 1px solid #b0d9c0; }
+.mb-buy { background: var(--red-light); color: var(--red); border: 1px solid #e8b0b0; }
+.mb-skip { background: var(--bg); color: var(--ink-light); border: 1px solid var(--border); }
+.meal-chevron { color: var(--ink-light); font-size: 14px; transition: transform 0.25s; flex-shrink: 0; }
+.meal-day-card.open .meal-chevron { transform: rotate(180deg); }
+.meal-day-body { display: none; border-top: 1px solid var(--border); padding: 16px 18px; }
+.meal-day-card.open .meal-day-body { display: block; }
+
+.meal-slot { margin-bottom: 1.25rem; }
+.meal-slot:last-child { margin-bottom: 0; }
+.meal-slot-title {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+  padding: 4px 10px; border-radius: 6px; display: inline-block; margin-bottom: 0.65rem;
+}
+.ms-included { background: var(--green-light); color: var(--green); }
+.ms-buy { background: var(--red-light); color: var(--red); }
+.ms-skip { background: var(--bg); color: var(--ink-light); border: 1px solid var(--border); }
+
+.meal-rest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 600px) { .meal-rest-grid { grid-template-columns: 1fr; } }
+
+.meal-rest-card {
+  border: 1px solid var(--border); border-radius: 10px; padding: 12px;
+  position: relative; transition: box-shadow 0.15s;
+}
+.meal-rest-card:hover { box-shadow: 0 3px 10px rgba(0,0,0,0.07); }
+.meal-rest-card.indian { border-left: 3px solid #f08030; }
+.meal-rest-card.viet { border-left: 3px solid var(--gold); }
+.mrc-type { font-size: 9px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+.mrc-type.indian { color: #d06010; }
+.mrc-type.viet { color: var(--gold); }
+.mrc-name { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.mrc-rating { font-size: 11px; color: var(--gold); font-weight: 600; margin-bottom: 5px; }
+.mrc-diet { margin-bottom: 6px; }
+.mrc-dish { font-size: 11px; color: var(--ink-mid); margin-bottom: 6px; line-height: 1.5; }
+.mrc-dish strong { color: var(--ink); }
+.mrc-price {
+  font-size: 11px; background: var(--navy-light); color: var(--navy);
+  border-radius: 6px; padding: 5px 8px; line-height: 1.6;
+  font-weight: 500;
+}
+.mrc-price .vnd-p { font-weight: 700; color: var(--navy); }
+.mrc-price .inr-p { color: var(--green); font-weight: 600; }
+.mrc-price .aud-p { color: #1560a0; font-weight: 600; }
+.mrc-addr { font-size: 10px; color: var(--ink-light); margin-top: 5px; }
+
+.all-inc-banner {
+  background: linear-gradient(135deg, var(--green-light), #d4f0e4);
+  border: 1px solid #b0d9c0; border-radius: 10px;
+  padding: 14px 18px; text-align: center;
+  font-size: 14px; font-weight: 600; color: var(--green);
+}
+
 /* ── FOOTER ── */
 footer {
   background: linear-gradient(135deg, var(--navy) 0%, #0d1d35 100%);
@@ -343,6 +533,8 @@ footer a { color: var(--gold); text-decoration: none; }
   <a href="#itinerary">Itinerary</a>
   <a href="#flights">Flights</a>
   <a href="#hotels">Hotels</a>
+  <a href="#food">Food</a>
+  <a href="#meals">Meal Plan</a>
   <a href="#notes">Notes</a>
 </nav>
 
@@ -684,6 +876,663 @@ footer a { color: var(--gold); text-decoration: none; }
 
 <hr class="divider">
 
+<!-- FOOD GUIDE -->
+<div class="container" id="food">
+  <div class="section-label">Eat Your Way Through Vietnam</div>
+  <div class="section-title">Food Guide</div>
+
+  <!-- Dietary Legend -->
+  <div class="diet-legend">
+    <span style="font-size:12px;font-weight:600;color:var(--ink-mid);align-self:center;">Dietary Key:</span>
+    <span class="diet-pill dp-all">🟢 All 4 pax</span>
+    <span class="diet-pill dp-chick">🟡 Rohith · Sanjay · Sai (Chicken + Veg)</span>
+    <span class="diet-pill dp-veg">🔵 Revanth (Pure Veg only)</span>
+    <span style="font-size:11px;color:var(--ink-light);margin-left:auto;align-self:center;">⚠️ Always say <em>"Không nước mắm"</em> (no fish sauce) for Revanth</span>
+  </div>
+
+  <!-- Tabs -->
+  <div class="food-tabs">
+    <div class="food-tab active" onclick="switchFood(this,'viet')">🍜 Vietnamese Dishes</div>
+    <div class="food-tab" onclick="switchFood(this,'indian')">🇮🇳 Indian Restaurants</div>
+    <div class="food-tab" onclick="switchFood(this,'fastfood')">🍔 Fast Food</div>
+    <div class="food-tab" onclick="switchFood(this,'snacks')">🍡 Snacks & Street Food</div>
+  </div>
+
+  <!-- ═══ TAB 1: VIETNAMESE DISHES ═══ -->
+  <div class="food-panel active" id="fp-viet">
+    <div class="section-label" style="margin-bottom:0.75rem;">Must-Try Dishes — Matched to Your Dietary Needs</div>
+    <div class="dish-grid">
+      <div class="dish-card">
+        <div class="dish-name">Pho Ga <span class="diet-pill dp-all" style="font-size:10px;padding:1px 6px;">All 4</span></div>
+        <div class="dish-vn">Phở Gà — Chicken Noodle Soup</div>
+        <div class="dish-desc">Vietnam's national dish — clear aromatic broth with rice noodles and chicken. Eaten for breakfast. Always say "Pho Ga" (chicken) — "Pho Bo" is beef.</div>
+        <div class="dish-where">📍 Best in Hanoi · Days 4 & 6 · ~40,000–90,000 VND</div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-name">Pho Chay <span class="diet-pill dp-veg" style="font-size:10px;padding:1px 6px;">Revanth</span></div>
+        <div class="dish-vn">Phở Chay — Vegetarian Pho</div>
+        <div class="dish-desc">Pure vegetarian version of pho with mushroom and vegetable broth. Available at most "quan chay" (veg) restaurants across all cities.</div>
+        <div class="dish-where">📍 Hanoi, Sapa, Da Nang · All days</div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-name">Banh Mi Ga <span class="diet-pill dp-chick" style="font-size:10px;padding:1px 6px;">R·S·Sai</span></div>
+        <div class="dish-vn">Bánh Mì Gà — Chicken Baguette</div>
+        <div class="dish-desc">Crispy French baguette with chicken, pickled vegetables, fresh herbs and chili. CNN's world's best sandwich. Say "Banh Mi Ga" for chicken.</div>
+        <div class="dish-where">📍 Best in Hoi An · Day 7 · Banh Mi Phuong · ~20,000–40,000 VND</div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-name">Banh Mi Chay <span class="diet-pill dp-veg" style="font-size:10px;padding:1px 6px;">Revanth</span></div>
+        <div class="dish-vn">Bánh Mì Chay — Veg Baguette</div>
+        <div class="dish-desc">Same iconic baguette but filled with tofu, pickled veg, herbs. Ask for "Banh Mi Chay" anywhere. Widely available across Vietnam.</div>
+        <div class="dish-where">📍 Everywhere · ~20,000–40,000 VND</div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-name">Com Ga Hoi An <span class="diet-pill dp-chick" style="font-size:10px;padding:1px 6px;">R·S·Sai</span></div>
+        <div class="dish-vn">Cơm Gà Hội An — Hoi An Chicken Rice</div>
+        <div class="dish-desc">Hoi An's most iconic dish — shredded chicken over yellow turmeric rice with chili sauce. A signature local dish you can only truly experience here.</div>
+        <div class="dish-where">📍 Hoi An Old Town · Day 7 · ~50,000–80,000 VND</div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-name">Cao Lau <span class="diet-pill dp-chick" style="font-size:10px;padding:1px 6px;">R·S·Sai</span></div>
+        <div class="dish-vn">Cao Lầu — Hoi An Noodles</div>
+        <div class="dish-desc">Chewy thick noodles unique to Hoi An — made using water from a 1000-year-old Cham well. Topped with char siu pork, crispy croutons, fresh herbs. Veg version available.</div>
+        <div class="dish-where">📍 Hoi An only · Day 7 · ~50,000–80,000 VND</div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-name">Mi Quang <span class="diet-pill dp-chick" style="font-size:10px;padding:1px 6px;">R·S·Sai</span></div>
+        <div class="dish-vn">Mì Quảng — Turmeric Noodles</div>
+        <div class="dish-desc">Central Vietnam's iconic dish — thick turmeric noodles with chicken, peanuts and crispy rice crackers in rich concentrated broth. Da Nang's most beloved local dish.</div>
+        <div class="dish-where">📍 Da Nang · Days 7–9 · Quan Mi Quang Ba Mua</div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-name">Banh Xeo <span class="diet-pill dp-all" style="font-size:10px;padding:1px 6px;">All 4</span></div>
+        <div class="dish-vn">Bánh Xèo — Sizzling Pancake</div>
+        <div class="dish-desc">Crispy golden rice flour crepe — sizzles loudly when batter hits the pan. Chicken version for Rohith/Sanjay/Sai. Ask for "Banh Xeo Chay" for Revanth. Tear, wrap in lettuce, dip.</div>
+        <div class="dish-where">📍 Da Nang & Hoi An · Days 7–8</div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-name">Goi Cuon <span class="diet-pill dp-all" style="font-size:10px;padding:1px 6px;">All 4</span></div>
+        <div class="dish-vn">Gỏi Cuốn — Fresh Spring Rolls</div>
+        <div class="dish-desc">Soft rice paper rolls with chicken, herbs, vermicelli noodles, dipped in peanut sauce. Light and healthy. Veg version easily available everywhere.</div>
+        <div class="dish-where">📍 Everywhere · Great starter · ~30,000–50,000 VND</div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-name">Ca Phe Trung <span class="diet-pill dp-all" style="font-size:10px;padding:1px 6px;">All 4</span></div>
+        <div class="dish-vn">Cà Phê Trứng — Egg Coffee</div>
+        <div class="dish-desc">Strong Vietnamese coffee topped with thick whipped egg yolk and condensed milk — like a dessert in a cup. A Hanoi original you must try. Rich, sweet, utterly unique.</div>
+        <div class="dish-where">📍 Hanoi Old Quarter · Days 4 & 6 · ~30,000–50,000 VND</div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-name">Ca Phe Dua <span class="diet-pill dp-all" style="font-size:10px;padding:1px 6px;">All 4</span></div>
+        <div class="dish-vn">Cà Phê Dừa — Coconut Coffee</div>
+        <div class="dish-desc">Iced coffee blended with coconut cream — tropical, creamy and refreshing. Available at Cong Ca Phe chain (nationwide). Perfect for hot Da Nang days.</div>
+        <div class="dish-where">📍 Everywhere · Cong Ca Phe chain · ~40,000–60,000 VND</div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-name">Bun Cha <span class="diet-pill dp-chick" style="font-size:10px;padding:1px 6px;">R·S·Sai</span></div>
+        <div class="dish-vn">Bún Chả — Hanoi Grilled Pork</div>
+        <div class="dish-desc">Hanoi's signature dish — grilled pork patties in tangy sweet broth with rice noodles and herbs. Famous after Obama ate it with Anthony Bourdain. Contains pork — Revanth skip.</div>
+        <div class="dish-where">📍 Hanoi Old Quarter · Days 4 & 6</div>
+      </div>
+    </div>
+    <div class="note-card info" style="margin-top:0.5rem;">
+      <div class="note-icon">💡</div>
+      <div><strong>Key phrases:</strong> "Pho Ga" = chicken pho · "Chay" = vegetarian · "Không nước mắm" = no fish sauce · "Không thịt" = no meat · "Ít cay" = less spicy</div>
+    </div>
+  </div>
+
+  <!-- ═══ TAB 2: INDIAN RESTAURANTS ═══ -->
+  <div class="food-panel" id="fp-indian">
+
+    <!-- SAPA -->
+    <div class="food-city-block">
+      <div class="food-city-header fch-sapa">🏔 Sapa — Days 2 & 3</div>
+      <div class="rest-warning">⚠️ Indian food is very limited in Sapa — it's a mountain village. Only one confirmed Indian option. Plan Indian restaurant meals around your Hanoi days instead.</div>
+      <div class="rest-grid" style="margin-top:1rem;">
+        <div class="rest-card">
+          <div class="rest-card-top">
+            <div class="rest-name">Gujarat Indian Restaurant</div>
+            <div class="rest-rating">⭐ 4.2 / 5</div>
+          </div>
+          <div class="rest-cuisine">Pure Vegetarian · Gujarati · North & South Indian · Jain Friendly</div>
+          <div class="rest-diet"><span class="diet-pill dp-veg" style="font-size:10px;padding:2px 8px;">🔵 Revanth — Perfect</span> <span class="diet-pill dp-all" style="font-size:10px;padding:2px 8px;">🟢 All 4</span></div>
+          <div class="rest-dishes"><strong>Must try:</strong> Gujarati Thali, Punjabi Thali, Paneer Butter Masala, Hyderabad Biryani, Veg Biryani, Dungri Bataka</div>
+          <div class="rest-meta">📍 Sapa town · 7 branches across Vietnam including Sapa · ₹400–700/person · Pure veg — Jain friendly with notice</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HANOI -->
+    <div class="food-city-block">
+      <div class="food-city-header fch-hanoi">🏛 Hanoi — Days 4 & 6</div>
+      <div class="rest-grid">
+        <div class="rest-card">
+          <div class="rest-card-top">
+            <div class="rest-name">Namaste Hanoi</div>
+            <div class="rest-rating">⭐ 4.5 / 5</div>
+          </div>
+          <div class="rest-cuisine">North Indian · Tandoori · Biryani</div>
+          <div class="rest-diet"><span class="diet-pill dp-all" style="font-size:10px;padding:2px 8px;">🟢 All 4</span></div>
+          <div class="rest-dishes"><strong>Must try:</strong> Biryanis, Tandoori Chicken, Kebabs, Garlic Naan, Dal Makhani</div>
+          <div class="rest-meta">📍 46 Tho Nhuom St, Hoan Kiem — Old Quarter · Lunch 11AM–2:30PM · Dinner 6PM–10PM · Elegant ambiance, consistently rated top Indian in Hanoi</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-card-top">
+            <div class="rest-name">Ganesh Indian Restaurant</div>
+            <div class="rest-rating">⭐ 4.3 / 5</div>
+          </div>
+          <div class="rest-cuisine">North & South Indian · Tandoori · Halal Available</div>
+          <div class="rest-diet"><span class="diet-pill dp-all" style="font-size:10px;padding:2px 8px;">🟢 All 4</span></div>
+          <div class="rest-dishes"><strong>Must try:</strong> Tandoori Chicken, Lamb Biryani, Veg Combo, Freshly Baked Naan, Raita</div>
+          <div class="rest-meta">📍 Multiple Hanoi locations · Open daily 11AM–10PM · Serving Vietnam since 2000 — largest Indian chain in Vietnam · ₹300–700/person</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-card-top">
+            <div class="rest-name">Masala Art</div>
+            <div class="rest-rating">⭐ 4.4 / 5</div>
+          </div>
+          <div class="rest-cuisine">North Indian · Vegetarian Friendly · Modern</div>
+          <div class="rest-diet"><span class="diet-pill dp-all" style="font-size:10px;padding:2px 8px;">🟢 All 4</span></div>
+          <div class="rest-dishes"><strong>Must try:</strong> Butter Chicken, Dal Makhani, Paneer Tikka, Garlic Naan, Lassi</div>
+          <div class="rest-meta">📍 Near St. Joseph's Cathedral, Hoan Kiem · Warm stylish space, balanced spice levels, English-friendly menu</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-card-top">
+            <div class="rest-name">Tadka Indian Restaurant</div>
+            <div class="rest-rating">⭐ 4.2 / 5</div>
+          </div>
+          <div class="rest-cuisine">North Indian · Indo-Chinese · Budget Friendly</div>
+          <div class="rest-diet"><span class="diet-pill dp-all" style="font-size:10px;padding:2px 8px;">🟢 All 4</span></div>
+          <div class="rest-dishes"><strong>Must try:</strong> Chicken Curry, Dal Tadka, Paneer Butter Masala, Roti, Indo-Chinese options</div>
+          <div class="rest-meta">📍 Just outside Old Quarter · Expat favourite · Generous portions, affordable · ₹300–600/person</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-card-top">
+            <div class="rest-name">Gujarat Indian Restaurant</div>
+            <div class="rest-rating">⭐ 4.2 / 5</div>
+          </div>
+          <div class="rest-cuisine">Pure Vegetarian · Gujarati · Rajasthani · Jain</div>
+          <div class="rest-diet"><span class="diet-pill dp-veg" style="font-size:10px;padding:2px 8px;">🔵 Revanth — Perfect</span></div>
+          <div class="rest-dishes"><strong>Must try:</strong> Gujarati Thali, Rajasthani Thali, Dum Biryani, Paneer Butter Masala, Sev Tomato</div>
+          <div class="rest-meta">📍 Hanoi branch · Pure veg sanctuary — 7 branches across Vietnam · ₹300–600/person · Jain-friendly with notice</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DA NANG -->
+    <div class="food-city-block">
+      <div class="food-city-header fch-danang">🌊 Da Nang — Days 6–9</div>
+      <div class="rest-grid">
+        <div class="rest-card">
+          <div class="rest-card-top">
+            <div class="rest-name">Ganesh Da Nang</div>
+            <div class="rest-rating">⭐ 4.3 / 5</div>
+          </div>
+          <div class="rest-cuisine">North Indian · Tandoori · Consistent Chain</div>
+          <div class="rest-diet"><span class="diet-pill dp-all" style="font-size:10px;padding:2px 8px;">🟢 All 4</span></div>
+          <div class="rest-dishes"><strong>Must try:</strong> Tandoori Chicken Platter (sizzling on a platter — perfectly charred), Lamb Biryani, Veg Combo, Naan</div>
+          <div class="rest-meta">📍 187 Lê Quang Đạo, Ngũ Hành Sơn · Open daily 10:30AM–10PM · Near Blue Sun hotel and My Khe Beach · ₹400–800/person</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-card-top">
+            <div class="rest-name">Rang Da Nang</div>
+            <div class="rest-rating">⭐ 4.5 / 5</div>
+          </div>
+          <div class="rest-cuisine">Fine Dining · Hyderabadi · North Indian</div>
+          <div class="rest-diet"><span class="diet-pill dp-chick" style="font-size:10px;padding:2px 8px;">🟡 Rohith · Sanjay · Sai</span></div>
+          <div class="rest-dishes"><strong>Must try:</strong> Hyderabadi Biryani (layered, aromatic, outstanding), Chicken Seekh Kebab (delicately smoky)</div>
+          <div class="rest-meta">📍 Da Nang city · Reservations recommended on weekends · ₹500–1,000/person · One of the best-rated Indian restaurants in Da Nang</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-card-top">
+            <div class="rest-name">Rasoi Da Nang</div>
+            <div class="rest-rating">⭐ 4.3 / 5</div>
+          </div>
+          <div class="rest-cuisine">North Indian · Dal · Biryani · Naan</div>
+          <div class="rest-diet"><span class="diet-pill dp-all" style="font-size:10px;padding:2px 8px;">🟢 All 4</span></div>
+          <div class="rest-dishes"><strong>Must try:</strong> Dal Makhani, Chicken/Veg Biryani, Butter Naan, Paneer Tikka Masala</div>
+          <div class="rest-meta">📍 Da Nang city centre · Warm welcoming ambiance · ₹300–600/person</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-card-top">
+            <div class="rest-name">Mumtaz Da Nang</div>
+            <div class="rest-rating">⭐ 4.2 / 5</div>
+          </div>
+          <div class="rest-cuisine">Authentic · Simple Menu · Great Value</div>
+          <div class="rest-diet"><span class="diet-pill dp-all" style="font-size:10px;padding:2px 8px;">🟢 All 4</span></div>
+          <div class="rest-dishes"><strong>Must try:</strong> Classic curries, Chicken dishes, Freshly baked naan — simple, authentic, extremely satisfying</div>
+          <div class="rest-meta">📍 Da Nang city · Long-standing favourite among locals and visitors · ₹300–600/person</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-card-top">
+            <div class="rest-name">Mr. India Restaurant & Bar</div>
+            <div class="rest-rating">⭐ 4.1 / 5</div>
+          </div>
+          <div class="rest-cuisine">North Indian · Bar · Welcoming Atmosphere</div>
+          <div class="rest-diet"><span class="diet-pill dp-all" style="font-size:10px;padding:2px 8px;">🟢 All 4</span></div>
+          <div class="rest-dishes"><strong>Must try:</strong> Chicken Tikka Masala, Garlic Naan, Dal Tadka, Kadhai Paneer</div>
+          <div class="rest-meta">📍 Da Nang city centre · 100,000–200,000 VND per main · Known for beautifully presented food and Indian hospitality</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-card-top">
+            <div class="rest-name">Gujarat Da Nang</div>
+            <div class="rest-rating">⭐ 4.2 / 5</div>
+          </div>
+          <div class="rest-cuisine">Pure Vegetarian · Gujarati · Jain</div>
+          <div class="rest-diet"><span class="diet-pill dp-veg" style="font-size:10px;padding:2px 8px;">🔵 Revanth — Perfect</span></div>
+          <div class="rest-dishes"><strong>Must try:</strong> Veg Thali, Paneer dishes, Gujarati specialties — pure vegetarian sanctuary</div>
+          <div class="rest-meta">📍 Da Nang branch · Pure veg · Great for Revanth when others want Indian too · ₹300–600/person</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOI AN -->
+    <div class="food-city-block">
+      <div class="food-city-header fch-hoian">🏮 Hoi An — Day 7 Evening</div>
+      <div class="rest-grid">
+        <div class="rest-card">
+          <div class="rest-card-top">
+            <div class="rest-name">Chickpea Eatery</div>
+            <div class="rest-rating">⭐ 4.8 / 5</div>
+          </div>
+          <div class="rest-cuisine">Vegan Vietnamese · Old Town · Highly Rated</div>
+          <div class="rest-diet"><span class="diet-pill dp-veg" style="font-size:10px;padding:2px 8px;">🔵 Revanth — Outstanding</span> <span class="diet-pill dp-all" style="font-size:10px;padding:2px 8px;">🟢 All 4</span></div>
+          <div class="rest-dishes"><strong>Must try:</strong> Vegan Cao Lau, Pumpkin Curry, Vegan Chicken Rice (tofu skin), Caramelized Tofu, Pan-seared Tofu Steak, Crispy Spring Rolls</div>
+          <div class="rest-meta">📍 Hoi An Old Town · Hours: 1PM–9PM · One of the most thoughtful restaurants in Hoi An — 100% plant-based with love and care in every dish</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-card-top">
+            <div class="rest-name">Banh Mi Phuong</div>
+            <div class="rest-rating">⭐ 4.6 / 5</div>
+          </div>
+          <div class="rest-cuisine">Iconic Street Food · Anthony Bourdain Approved</div>
+          <div class="rest-diet"><span class="diet-pill dp-chick" style="font-size:10px;padding:2px 8px;">🟡 Rohith · Sanjay · Sai</span></div>
+          <div class="rest-dishes"><strong>Must try:</strong> Banh Mi Ga (chicken), Banh Mi Mixed — 15 options. "Easily the best banh mi of my life" — multiple reviewers</div>
+          <div class="rest-meta">📍 2B Phan Chau Trinh, Hoi An · Queue for takeaway OR sit inside to skip queue · ~30,000–50,000 VND per sandwich</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-card-top">
+            <div class="rest-name">Minh Hien Vegetarian</div>
+            <div class="rest-rating">⭐ 4.4 / 5</div>
+          </div>
+          <div class="rest-cuisine">Vietnamese Veg · Old Town · Peaceful</div>
+          <div class="rest-diet"><span class="diet-pill dp-veg" style="font-size:10px;padding:2px 8px;">🔵 Revanth</span> <span class="diet-pill dp-all" style="font-size:10px;padding:2px 8px;">🟢 All 4</span></div>
+          <div class="rest-dishes"><strong>Must try:</strong> Veg Pho, Cao Lau Chay, Vietnamese Pancakes (Banh Xeo), Stir-fried Water Spinach with Garlic</div>
+          <div class="rest-meta">📍 Hoi An Old Town · Peaceful escape, seasonal vegetables, authentic flavours</div>
+        </div>
+        <div class="rest-card">
+          <div class="rest-card-top">
+            <div class="rest-name">White Rose Restaurant</div>
+            <div class="rest-rating">⭐ 4.6 / 5</div>
+          </div>
+          <div class="rest-cuisine">Hoi An Exclusive · White Rose Dumplings</div>
+          <div class="rest-diet"><span class="diet-pill dp-all" style="font-size:10px;padding:2px 8px;">🟢 All 4</span></div>
+          <div class="rest-dishes"><strong>Must try:</strong> Banh Bao Banh Vac (White Rose Dumplings) — a Hoi An exclusive dish, recipe kept secret for 3 generations. Available in shrimp or veg filling.</div>
+          <div class="rest-meta">📍 Hoi An Old Town · A dish you can ONLY get here — don't miss it · ~50,000–80,000 VND</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note-card warn" style="margin-top:0.5rem;">
+      <div class="note-icon">🌶️</div>
+      <div>At Indian restaurants, ask for <strong>"Indian spicy"</strong> if you want full heat — Vietnamese kitchens dial down spice for tourists by default. Also, GrabFood app delivers from many Indian restaurants directly to your hotel.</div>
+    </div>
+  </div>
+
+  <!-- ═══ TAB 3: FAST FOOD ═══ -->
+  <div class="food-panel" id="fp-fastfood">
+    <div class="section-label" style="margin-bottom:0.75rem;">Chain Availability by City</div>
+    <div style="overflow-x:auto;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.07);margin-bottom:1.5rem;">
+      <table class="ff-table">
+        <thead>
+          <tr>
+            <th style="width:30%">Chain</th>
+            <th>🏔 Sapa<br><span style="font-weight:400;font-size:10px;opacity:0.7;">Days 2–3</span></th>
+            <th>🏛 Hanoi<br><span style="font-weight:400;font-size:10px;opacity:0.7;">Days 4 & 6</span></th>
+            <th>🌊 Da Nang<br><span style="font-weight:400;font-size:10px;opacity:0.7;">Days 7–9</span></th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🍗 KFC</td>
+            <td><span class="ff-no">✗</span></td>
+            <td><span class="ff-avail">✓</span></td>
+            <td><span class="ff-avail">✓</span></td>
+            <td style="text-align:left;font-size:12px;color:var(--ink-mid);">172 stores Vietnam-wide. Fried chicken, wings, tenders. Also has Vietnamese fish sauce chicken.</td>
+          </tr>
+          <tr>
+            <td>🍔 McDonald's</td>
+            <td><span class="ff-no">✗</span></td>
+            <td><span class="ff-avail">✓</span></td>
+            <td><span class="ff-limited">Limited</span></td>
+            <td style="text-align:left;font-size:12px;color:var(--ink-mid);">Hanoi confirmed. Da Nang expansion in progress — check Maps. Big Mac ~₹230 (62% cheaper than US).</td>
+          </tr>
+          <tr>
+            <td>🍕 Pizza Hut</td>
+            <td><span class="ff-no">✗</span></td>
+            <td><span class="ff-avail">✓</span></td>
+            <td><span class="ff-avail">✓</span></td>
+            <td style="text-align:left;font-size:12px;color:var(--ink-mid);">50+ restaurants across Vietnam. Wide variety of crusts and chicken toppings available.</td>
+          </tr>
+          <tr>
+            <td>🍕 Domino's</td>
+            <td><span class="ff-no">✗</span></td>
+            <td><span class="ff-avail">✓</span></td>
+            <td><span class="ff-limited">Limited</span></td>
+            <td style="text-align:left;font-size:12px;color:var(--ink-mid);">Mainly Hanoi & HCMC. Delivery focused — order via app. 30-min guarantee.</td>
+          </tr>
+          <tr>
+            <td>🍔 Burger King</td>
+            <td><span class="ff-no">✗</span></td>
+            <td><span class="ff-avail">✓</span></td>
+            <td><span class="ff-avail">✓</span></td>
+            <td style="text-align:left;font-size:12px;color:var(--ink-mid);">5 cities including Hanoi & Da Nang. Chicken Whopper recommended over beef.</td>
+          </tr>
+          <tr>
+            <td>🐝 Jollibee</td>
+            <td><span class="ff-no">✗</span></td>
+            <td><span class="ff-avail">✓</span></td>
+            <td><span class="ff-avail">✓</span></td>
+            <td style="text-align:left;font-size:12px;color:var(--ink-mid);">100+ Vietnam locations. SE Asian chain — famous for crispy chicken and Peach Mango Pie. Worth trying!</td>
+          </tr>
+          <tr>
+            <td>🥖 Subway</td>
+            <td><span class="ff-no">✗</span></td>
+            <td><span class="ff-limited">Limited</span></td>
+            <td><span class="ff-limited">Limited</span></td>
+            <td style="text-align:left;font-size:12px;color:var(--ink-mid);">Limited presence — check Google Maps on arrival. Chicken teriyaki sub works well for the group.</td>
+          </tr>
+          <tr>
+            <td>🍗 Lotteria</td>
+            <td><span class="ff-no">✗</span></td>
+            <td><span class="ff-avail">✓</span></td>
+            <td><span class="ff-avail">✓</span></td>
+            <td style="text-align:left;font-size:12px;color:var(--ink-mid);">210+ stores Vietnam-wide. Korean chain. Spicy chicken, teriyaki burger, rice dishes. Very affordable.</td>
+          </tr>
+          <tr>
+            <td>☕ Starbucks</td>
+            <td><span class="ff-no">✗</span></td>
+            <td><span class="ff-avail">✓</span></td>
+            <td><span class="ff-avail">✓</span></td>
+            <td style="text-align:left;font-size:12px;color:var(--ink-mid);">Available in both cities. But honestly — try Ca Phe Trung (egg coffee) instead — far more memorable!</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-card tip">
+      <div class="note-icon">📱</div>
+      <div><strong>GrabFood & Uber Eats</strong> — download before the trip. Order any fast food or restaurant to your hotel. Expect 15–25% extra for platform fees. Works across all cities. Great for tired evenings after long tour days.</div>
+    </div>
+    <div class="note-card info" style="margin-top:8px;">
+      <div class="note-icon">🥗</div>
+      <div><strong>Revanth at fast food chains:</strong> KFC has corn, fries and coleslaw. McDonald's has fries, apple pie, hash browns. Pizza Hut and Domino's can make vegetarian pizzas. Always double-check cross-contamination with staff.</div>
+    </div>
+  </div>
+
+  <!-- ═══ TAB 4: SNACKS & STREET FOOD ═══ -->
+  <div class="food-panel" id="fp-snacks">
+    <div class="section-label" style="margin-bottom:0.75rem;">Must-Try Snacks — Safe for Your Dietary Needs</div>
+    <div class="snack-grid">
+      <div class="snack-card">
+        <div class="snack-top">
+          <div>
+            <div class="snack-name">King Roti 👑</div>
+            <div class="snack-vn">King Roti — Sweet Buns</div>
+          </div>
+          <span class="diet-pill dp-all" style="font-size:10px;padding:2px 7px;">🟢 All 4</span>
+        </div>
+        <div class="snack-desc">THE viral Hanoi snack — freshly baked buns with crispy exterior and soft buttery inside. Flavours: chocolate, vanilla, matcha, coffee butter. Similar to Japanese melon pan. Always queue — always worth it.</div>
+        <div class="snack-where">📍 34 Hang Gai, Hanoi Old Quarter · Days 4 & 6</div>
+        <span class="price-tag">~20,000 VND / ₹80 per bun</span>
+        <div style="font-size:11px;color:var(--gold);margin-top:6px;">⭐ 3.8/5 — viral and worth trying once. Buy when hot out of the oven!</div>
+      </div>
+      <div class="snack-card">
+        <div class="snack-top">
+          <div>
+            <div class="snack-name">Egg Coffee ☕</div>
+            <div class="snack-vn">Cà Phê Trứng</div>
+          </div>
+          <span class="diet-pill dp-all" style="font-size:10px;padding:2px 7px;">🟢 All 4</span>
+        </div>
+        <div class="snack-desc">Strong Vietnamese coffee topped with thick whipped egg yolk and condensed milk — like a dessert in a cup. A Hanoi original invented in the 1940s. Rich, creamy, unique. Must try in the Old Quarter.</div>
+        <div class="snack-where">📍 Hanoi Old Quarter · Days 4 & 6</div>
+        <span class="price-tag">~30,000–50,000 VND / ₹120–200</span>
+      </div>
+      <div class="snack-card">
+        <div class="snack-top">
+          <div>
+            <div class="snack-name">Coconut Coffee ☕</div>
+            <div class="snack-vn">Cà Phê Dừa</div>
+          </div>
+          <span class="diet-pill dp-all" style="font-size:10px;padding:2px 7px;">🟢 All 4</span>
+        </div>
+        <div class="snack-desc">Iced coffee blended with coconut cream — tropical, creamy and refreshing. Available at Cong Ca Phe chain (nationwide). Perfect for hot Da Nang afternoons after tours.</div>
+        <div class="snack-where">📍 Cong Ca Phe — all cities · Days 4–9</div>
+        <span class="price-tag">~40,000–60,000 VND / ₹160–240</span>
+      </div>
+      <div class="snack-card">
+        <div class="snack-top">
+          <div>
+            <div class="snack-name">Vietnamese Pizza 🍕</div>
+            <div class="snack-vn">Bánh Tráng Nướng</div>
+          </div>
+          <span class="diet-pill dp-chick" style="font-size:10px;padding:2px 7px;">🟡 R·S·Sai</span>
+        </div>
+        <div class="snack-desc">Grilled rice paper topped with egg, green onions, chili sauce, mayo. Crispy like a cracker — smoky and addictive. Ask for chicken topping version. Revanth: ask for egg only, no shrimp/pork.</div>
+        <div class="snack-where">📍 Da Nang & Hoi An street carts · Evening · Days 7–8</div>
+        <span class="price-tag">~15,000–35,000 VND / ₹60–140</span>
+        <div class="snack-warn">⚠️ Revanth: ask for egg-only version — no shrimp or pork</div>
+      </div>
+      <div class="snack-card">
+        <div class="snack-top">
+          <div>
+            <div class="snack-name">Coconut Candy 🥥</div>
+            <div class="snack-vn">Kẹo Dừa — Ben Tre</div>
+          </div>
+          <span class="diet-pill dp-all" style="font-size:10px;padding:2px 7px;">🟢 All 4</span>
+        </div>
+        <div class="snack-desc">Chewy coconut candy from Ben Tre — wrapped in rice paper. Flavours include durian, ginger, pandan. Addictively good. One of Vietnam's most famous souvenirs. Available at all souvenir shops.</div>
+        <div class="snack-where">📍 Souvenir shops everywhere · Buy as gifts</div>
+        <span class="price-tag">Pure veg · Great souvenir</span>
+      </div>
+      <div class="snack-card">
+        <div class="snack-top">
+          <div>
+            <div class="snack-name">Coconut Crackers 🍪</div>
+            <div class="snack-vn">Bánh Dừa Nướng</div>
+          </div>
+          <span class="diet-pill dp-all" style="font-size:10px;padding:2px 7px;">🟢 All 4</span>
+        </div>
+        <div class="snack-desc">Crispy toasted coconut biscuit — thin, fragrant, naturally sweet. A Da Nang and Hoi An speciality. Perfect to buy in bulk as gifts. Look out for the brand Banh Dua Nuong in markets.</div>
+        <div class="snack-where">📍 Da Nang & Hoi An markets · Days 7–9</div>
+        <span class="price-tag">~30,000–50,000 VND / bag · Pure veg</span>
+      </div>
+      <div class="snack-card">
+        <div class="snack-top">
+          <div>
+            <div class="snack-name">Fried Glutinous Balls 🍡</div>
+            <div class="snack-vn">Bánh Rán</div>
+          </div>
+          <span class="diet-pill dp-all" style="font-size:10px;padding:2px 7px;">🟢 All 4</span>
+        </div>
+        <div class="snack-desc">Deep-fried sesame-coated rice balls filled with sweet mung bean paste. Crispy outside, warm sweet inside. Ladies sell them from baskets on Hanoi streets. Look for them in the Old Quarter.</div>
+        <div class="snack-where">📍 Hanoi street vendors · Days 4 & 6</div>
+        <span class="price-tag">~10,000–15,000 VND each · Pure veg</span>
+      </div>
+      <div class="snack-card">
+        <div class="snack-top">
+          <div>
+            <div class="snack-name">Vietnamese Sweet Soup 🍮</div>
+            <div class="snack-vn">Chè</div>
+          </div>
+          <span class="diet-pill dp-all" style="font-size:10px;padding:2px 7px;">🟢 All 4</span>
+        </div>
+        <div class="snack-desc">Cold or warm dessert with coconut milk, coloured jellies, sweet beans, tapioca and fruit. Served in a cup or bowl. Incredibly refreshing on hot Da Nang afternoons. Multiple flavour combinations.</div>
+        <div class="snack-where">📍 Street carts & night markets · Da Nang Days 7–9</div>
+        <span class="price-tag">~15,000–30,000 VND · Pure veg</span>
+      </div>
+      <div class="snack-card">
+        <div class="snack-top">
+          <div>
+            <div class="snack-name">Fried Banana 🍌</div>
+            <div class="snack-vn">Chuối Chiên</div>
+          </div>
+          <span class="diet-pill dp-all" style="font-size:10px;padding:2px 7px;">🟢 All 4</span>
+        </div>
+        <div class="snack-desc">Banana coated in rice flour and coconut milk batter, deep fried until golden and crispy. Soft sweet inside, crunchy outside. Everywhere in Vietnam. Cheap, delicious, eat immediately while hot.</div>
+        <div class="snack-where">📍 Street carts everywhere · All cities</div>
+        <span class="price-tag">~10,000–20,000 VND · Pure veg</span>
+      </div>
+      <div class="snack-card">
+        <div class="snack-top">
+          <div>
+            <div class="snack-name">Sapa Chestnut Cake 🌰</div>
+            <div class="snack-vn">Bánh Hạt Dẻ</div>
+          </div>
+          <span class="diet-pill dp-all" style="font-size:10px;padding:2px 7px;">🟢 All 4</span>
+        </div>
+        <div class="snack-desc">Popular mountain dessert from Sapa — chestnut-based cake sold by local vendors. A regional speciality unique to the northern highlands. Pick one up while exploring Sapa town.</div>
+        <div class="snack-where">📍 Sapa markets & street stalls · Days 2–3 · Pure veg</div>
+        <span class="price-tag">Sapa exclusive · Regional gem</span>
+      </div>
+      <div class="snack-card">
+        <div class="snack-top">
+          <div>
+            <div class="snack-name">Marou Chocolate 🍫</div>
+            <div class="snack-vn">Marou — Vietnamese Artisan</div>
+          </div>
+          <span class="diet-pill dp-all" style="font-size:10px;padding:2px 7px;">🟢 All 4</span>
+        </div>
+        <div class="snack-desc">Premium Vietnamese artisan chocolate made from local cacao beans. Unique flavours like "Pho Spices" and "Popped Rice." Won international awards. Makes the best gift to bring home from Vietnam.</div>
+        <div class="snack-where">📍 Souvenir shops — Hanoi, Da Nang, Hoi An</div>
+        <span class="price-tag">~150,000–250,000 VND · Great gift</span>
+      </div>
+      <div class="snack-card">
+        <div class="snack-top">
+          <div>
+            <div class="snack-name">O Mai 🍑</div>
+            <div class="snack-vn">Ô Mai — Candied Dried Fruits</div>
+          </div>
+          <span class="diet-pill dp-all" style="font-size:10px;padding:2px 7px;">🟢 All 4</span>
+        </div>
+        <div class="snack-desc">Dried plums, apricots and peaches candied with sugar, salt, chili and ginger — sweet, sour, salty and spicy in every bite. A Hanoi speciality. Find them on Hang Than Street in the Old Quarter.</div>
+        <div class="snack-where">📍 Hang Than Street, Hanoi Old Quarter · Days 4 & 6</div>
+        <span class="price-tag">Pure veg · Great to nibble on tour days</span>
+      </div>
+    </div>
+    <div class="note-card warn" style="margin-top:0.5rem;">
+      <div class="note-icon">⚠️</div>
+      <div><strong>Revanth — Snacks to avoid or check:</strong> Bánh Tráng Trộn (rice paper salad — contains dried shrimp unless veg version requested) · Any snack with "tôm" (shrimp) · Any snack with "mắm" (fish sauce) · Standard Bánh Tráng Nướng (ask for egg-only version)</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- MEAL PLANNER -->
+<div class="container" id="meals">
+  <div class="section-label">Where to Eat — Day by Day</div>
+  <div class="section-title">Meal Planner</div>
+
+  <!-- VND Live Rate Bar -->
+  <div class="vnd-bar" style="background:linear-gradient(90deg,var(--navy),var(--navy-mid));border-radius:10px;padding:10px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:1.5rem;box-shadow:0 2px 10px rgba(28,43,74,0.15);">
+    <span class="vnd-label">💱 Live VND Rate:</span>
+    <span class="vnd-rate vnd-rate-display">Loading...</span>
+    <span class="vnd-dot">·</span>
+    <span style="font-size:12px;color:rgba(255,255,255,0.6);">All meal prices convert live on refresh</span>
+    <span class="vnd-time" id="vnd-time"></span>
+  </div>
+
+  <!-- DIETARY PHRASES CARD -->
+  <div style="background:var(--white);border:2px solid var(--red);border-radius:14px;padding:1.5rem;margin-bottom:2rem;box-shadow:0 4px 16px rgba(184,50,50,0.1);">
+    <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:var(--red);margin-bottom:1rem;">🗣️ Essential Phrases — Show Your Phone to Restaurant Staff</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;">
+
+      <div style="background:#fff5f5;border:1px solid #e8b0b0;border-radius:10px;padding:12px;">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-light);margin-bottom:6px;">🔵 REVANTH — Pure Veg</div>
+        <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #f0d0d0;">
+          <div style="font-size:11px;color:var(--ink-mid);">I am vegetarian</div>
+          <div style="font-size:18px;font-weight:700;color:var(--red);">Tôi ăn chay</div>
+        </div>
+        <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #f0d0d0;">
+          <div style="font-size:11px;color:var(--ink-mid);">No fish sauce</div>
+          <div style="font-size:18px;font-weight:700;color:var(--red);">Không nước mắm</div>
+        </div>
+        <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #f0d0d0;">
+          <div style="font-size:11px;color:var(--ink-mid);">No meat at all</div>
+          <div style="font-size:18px;font-weight:700;color:var(--red);">Không thịt</div>
+        </div>
+        <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #f0d0d0;">
+          <div style="font-size:11px;color:var(--ink-mid);">No shrimp</div>
+          <div style="font-size:18px;font-weight:700;color:var(--red);">Không tôm</div>
+        </div>
+        <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #f0d0d0;">
+          <div style="font-size:11px;color:var(--ink-mid);">Vegetarian pho please</div>
+          <div style="font-size:18px;font-weight:700;color:var(--red);">Pho chay</div>
+        </div>
+        <div>
+          <div style="font-size:11px;color:var(--ink-mid);">No egg either (if strict)</div>
+          <div style="font-size:18px;font-weight:700;color:var(--red);">Không trứng</div>
+        </div>
+      </div>
+
+      <div style="background:#fff8e6;border:1px solid #f0d080;border-radius:10px;padding:12px;">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-light);margin-bottom:6px;">🟡 ROHITH · SANJAY · SAI — Chicken + Veg</div>
+        <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #f0e0a0;">
+          <div style="font-size:11px;color:var(--ink-mid);">Chicken pho please</div>
+          <div style="font-size:18px;font-weight:700;color:#7a5010;">Pho gà</div>
+        </div>
+        <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #f0e0a0;">
+          <div style="font-size:11px;color:var(--ink-mid);">Chicken only — no beef</div>
+          <div style="font-size:18px;font-weight:700;color:#7a5010;">Chỉ gà thôi, không thịt bò</div>
+        </div>
+        <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #f0e0a0;">
+          <div style="font-size:11px;color:var(--ink-mid);">No pork</div>
+          <div style="font-size:18px;font-weight:700;color:#7a5010;">Không thịt lợn</div>
+        </div>
+        <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #f0e0a0;">
+          <div style="font-size:11px;color:var(--ink-mid);">No seafood</div>
+          <div style="font-size:18px;font-weight:700;color:#7a5010;">Không hải sản</div>
+        </div>
+        <div>
+          <div style="font-size:11px;color:var(--ink-mid);">Chicken banh mi</div>
+          <div style="font-size:18px;font-weight:700;color:#7a5010;">Bánh mì gà</div>
+        </div>
+      </div>
+
+      <div style="background:var(--green-light);border:1px solid #b0d9c0;border-radius:10px;padding:12px;">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-light);margin-bottom:6px;">🟢 ALL 4 PAX</div>
+        <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #a0c8b0;">
+          <div style="font-size:11px;color:var(--ink-mid);">Less spicy please</div>
+          <div style="font-size:18px;font-weight:700;color:var(--green);">Ít cay</div>
+        </div>
+        <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #a0c8b0;">
+          <div style="font-size:11px;color:var(--ink-mid);">How much does this cost?</div>
+          <div style="font-size:18px;font-weight:700;color:var(--green);">Cái này bao nhiêu tiền?</div>
+        </div>
+        <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #a0c8b0;">
+          <div style="font-size:11px;color:var(--ink-mid);">Bill please</div>
+          <div style="font-size:18px;font-weight:700;color:var(--green);">Tính tiền</div>
+        </div>
+        <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #a0c8b0;">
+          <div style="font-size:11px;color:var(--ink-mid);">Very delicious!</div>
+          <div style="font-size:18px;font-weight:700;color:var(--green);">Ngon lắm!</div>
+        </div>
+        <div>
+          <div style="font-size:11px;color:var(--ink-mid);">No sugar (coffee)</div>
+          <div style="font-size:18px;font-weight:700;color:var(--green);">Không đường</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY BY DAY MEAL CARDS -->
+  <div id="meal-days-container"></div>
+</div>
+
+<hr class="divider">
+
 <!-- NOTES -->
 <div class="container" id="notes">
   <div class="section-label">Important Reminders</div>
@@ -744,22 +1593,21 @@ updateProgress();
 
 // ── COST TABLE ──────────────────────────────────────────────────────────────
 async function buildCosts() {
-  // default rates
-  let usdInr = 94.31, audInr = 67.00;
-  try {
-    const r = await fetch('https://api.frankfurter.app/latest?from=USD&to=INR,AUD');
-    const d = await r.json();
-    usdInr = d.rates.INR;
-    const usdAud = d.rates.AUD;
-    audInr = usdInr / usdAud;
-  } catch(e) {}
-
-  const usdAud = usdInr / audInr;
+  // Rates as of Jul 3, 2026 — hardcoded for reliability
+  const usdInr = 94.63;
+  const usdAud = 1.4495;
+  const audInr = usdInr / usdAud; // 65.28
+  const usdVnd = 26315;
+  // expose globally for meal planner
+  window._rates = { usdInr, audInr, usdVnd, usdAud };
 
   document.getElementById('r-usd-inr').textContent = '1 USD = ₹' + usdInr.toFixed(2);
   document.getElementById('r-aud-inr').textContent = '1 AUD = ₹' + audInr.toFixed(2);
   document.getElementById('r-usd-aud').textContent = '1 USD = A$' + usdAud.toFixed(4);
-  document.getElementById('r-time').textContent = 'as of ' + new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}) + ' today';
+  document.getElementById('r-time').textContent = 'Rates as of Jul 3, 2026';
+  document.querySelectorAll('.vnd-rate-display').forEach(el => {
+    el.textContent = '1 USD = ₫' + Math.round(usdVnd).toLocaleString();
+  });
 
   // helpers
   const fi = n => n === null ? '—' : '₹' + Math.round(n).toLocaleString('en-IN');
@@ -933,6 +1781,8 @@ async function buildCosts() {
   `;
 
   document.getElementById('cost-tbody').innerHTML = rows;
+  // now build meal planner with same rates
+  buildMealPrices(usdInr, audInr, usdVnd);
 }
 buildCosts();
 
@@ -970,6 +1820,242 @@ function toggleDay(h) {
   const card = h.parentElement;
   card.classList.toggle('open');
   h.querySelector('.day-chevron').style.transform = card.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+}
+
+// ── FOOD TABS
+function switchFood(tab, panel) {
+  document.querySelectorAll('.food-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.food-panel').forEach(p => p.classList.remove('active'));
+  tab.classList.add('active');
+  document.getElementById('fp-' + panel).classList.add('active');
+}
+
+// ── MEAL PLANNER ────────────────────────────────────────────────────────────
+const mealDays = [
+  {
+    n:1, date:'Aug 14 (Fri)', title:'Hanoi Arrival', tag:'tag-travel',
+    meals:{ b:false, l:false, d:false },
+    note:'Quick meals before bus departs 15:00. Late night arrival in Sapa ~11PM — most restaurants closed.',
+    slots:[
+      { meal:'Lunch', time:'11:00–13:00', location:'Hanoi (near bus stop)',
+        options:[
+          { type:'viet', name:'Pho 10 Ly Quoc Su', rating:'⭐ 4.6/5', for:'dp-chick', forLabel:'🟡 Rohith·Sanjay·Sai', dish:'Pho Ga (chicken pho)', vndPrice:70000, address:'Ly Quoc Su St, Old Quarter', note:'Iconic Hanoi chicken pho — locals eat here daily' },
+          { type:'viet', name:'Katze Vegan', rating:'⭐ 4.7/5', for:'dp-veg', forLabel:'🔵 Revanth', dish:'Fried vegan spring rolls, banana flower salad', vndPrice:85000, address:'43B Hang Be, Hoan Kiem', note:'Best veg option near Old Quarter' },
+          { type:'indian', name:'Namaste Hanoi', rating:'⭐ 4.6/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Butter chicken, garlic naan, dal makhani', vndPrice:180000, address:'46 Tho Nhuom St, Hoan Kiem', note:'If time allows before bus — 5 min from Old Quarter' }
+        ]
+      },
+      { meal:'Dinner', time:'Late night Sapa', location:'Sapa (limited options)',
+        options:[
+          { type:'viet', name:'7-Eleven / Circle K Sapa', rating:'—', for:'dp-all', forLabel:'🟢 All 4', dish:'Instant noodles, snacks, drinks', vndPrice:25000, address:'Sapa town centre', note:'Arrival ~11PM — most restaurants closed. Stock up here' }
+        ]
+      }
+    ]
+  },
+  {
+    n:2, date:'Aug 15 (Sat)', title:'Fansipan + Glass Bridge', tag:'tag-sapa',
+    meals:{ b:true, l:false, d:false },
+    note:'Breakfast at Charm Sapa. Lunch at Fansipan summit. Back in Sapa town for dinner.',
+    slots:[
+      { meal:'Lunch', time:'~12:00–13:30', location:'Fansipan Summit',
+        options:[
+          { type:'viet', name:'Do Quyen Restaurant (Fansipan top)', rating:'⭐ 4.2/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Mountain chicken soup, rice sets, tofu dishes for Revanth', vndPrice:120000, address:'Fansipan Summit, 3143m', note:'Only restaurant at the summit — basic but an incredible experience' }
+        ]
+      },
+      { meal:'Dinner', time:'18:00–20:30', location:'Sapa Town',
+        options:[
+          { type:'viet', name:'Good Morning Vietnam', rating:'⭐ 4.6/5 (1,463 reviews)', for:'dp-all', forLabel:'🟢 All 4', dish:'Chicken curry in coconut (signature), pumpkin soup, veg fried rice', vndPrice:130000, address:'Sapa town centre', note:'Most reviewed restaurant in Sapa — Revanth: pumpkin soup + veg fried rice' },
+          { type:'viet', name:'Nature View Restaurant', rating:'⭐ 4.5/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Chicken lemongrass sauté, tofu clay pot, great valley views', vndPrice:150000, address:'Sapa town centre', note:'More upscale option, stunning views' },
+          { type:'indian', name:'Gujarat Indian Restaurant', rating:'⭐ 4.2/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Gujarati Thali, Paneer Butter Masala, Veg Biryani', vndPrice:160000, address:'Sapa town centre', note:'Only Indian option in Sapa — perfect for Revanth, pure veg kitchen' }
+        ]
+      }
+    ]
+  },
+  {
+    n:3, date:'Aug 16 (Sun)', title:'Cat Cat Village → Bus to Hanoi', tag:'tag-travel',
+    meals:{ b:true, l:false, d:false },
+    note:'Breakfast at hotel. Lunch in Sapa town before 15:00 bus. Dinner skipped — overnight bus back to Hanoi.',
+    slots:[
+      { meal:'Lunch', time:'12:00–14:00', location:'Sapa Town (before 15:00 bus)',
+        options:[
+          { type:'viet', name:'Good Morning View Restaurant', rating:'⭐ 4.8/5 (697 reviews)', for:'dp-all', forLabel:'🟢 All 4', dish:'Chicken curry in coconut, bamboo rice, spring rolls', vndPrice:140000, address:'Sapa town centre', note:'Highest rated restaurant in Sapa. Owner Kenny is legendary — go early to get a seat' },
+          { type:'viet', name:'Thong Dong Vegan Kitchen', rating:'⭐ 4.6/5', for:'dp-veg', forLabel:'🔵 Revanth', dish:'Colourful tofu rice, veg noodle soup, creative plant-based dishes', vndPrice:90000, address:'08B Hoang Dieu, Sapa', note:'Perfect for Revanth. Also great for the whole group' },
+          { type:'indian', name:'Gujarat Indian Restaurant', rating:'⭐ 4.2/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Punjabi Thali, Dal Makhani, Naan', vndPrice:160000, address:'Sapa town centre', note:'Go early before bus — closes afternoon. Good last Indian meal before Hanoi' }
+        ]
+      }
+    ]
+  },
+  {
+    n:4, date:'Aug 17 (Mon)', title:'Ninh Binh Day Tour', tag:'tag-hanoi',
+    meals:{ b:true, l:false, d:false },
+    note:'Breakfast at Hanoi Pearl. Lunch in Ninh Binh during tour. Dinner back in Hanoi Old Quarter.',
+    slots:[
+      { meal:'Lunch', time:'~13:00–14:30', location:'Ninh Binh (near Trang An)',
+        options:[
+          { type:'viet', name:'Local restaurant near Trang An (guide rec)', rating:'⭐ ~4.3/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Com nieu (clay pot rice), Ga nuong (mountain grilled chicken), veg stir fries for Revanth', vndPrice:100000, address:'Near Trang An, Ninh Binh', note:'Your guide will recommend the best local spot. Mountain chicken (Ga nuong) is the Ninh Binh speciality' }
+        ]
+      },
+      { meal:'Dinner', time:'19:00–21:00', location:'Hanoi Old Quarter',
+        options:[
+          { type:'viet', name:'Bun Cha Huong Lien', rating:'⭐ 4.5/5', for:'dp-chick', forLabel:'🟡 Rohith·Sanjay·Sai', dish:'Bun Cha — Obama\'s famous Hanoi meal. Grilled pork patties with noodles', vndPrice:75000, address:'Near Hanoi Old Quarter', note:'Contains pork — Revanth must skip. Iconic Hanoi experience' },
+          { type:'viet', name:'Dana Vegan House', rating:'⭐ 4.6/5', for:'dp-veg', forLabel:'🔵 Revanth', dish:'Thanh Lang mushroom soup, vegan buffet, traditional house ambiance', vndPrice:95000, address:'1 Tong Duy Tan, Hoan Kiem', note:'Beautiful 100-year-old traditional Vietnamese house — Revanth\'s dinner while others have Bun Cha' },
+          { type:'indian', name:'Namaste Hanoi', rating:'⭐ 4.6/5 (3,850 reviews)', for:'dp-all', forLabel:'🟢 All 4', dish:'Tandoori chicken, biryani, dal makhani, garlic naan', vndPrice:180000, address:'46 Tho Nhuom St, Hoan Kiem', note:'5 min from Hanoi Pearl. Great first full Indian dinner in Hanoi' },
+          { type:'indian', name:'Ram Krishna Vegetarian', rating:'⭐ 4.5/5', for:'dp-veg', forLabel:'🔵 Revanth', dish:'Pure veg — Paneer Tikka, Gujarati Thali, Jain-friendly on request', vndPrice:150000, address:'Hanoi Old Quarter', note:'Perfect veg Indian option for Revanth if others go to Namaste' }
+        ]
+      }
+    ]
+  },
+  {
+    n:5, date:'Aug 18 (Tue)', title:'Halong Bay Cruise', tag:'tag-halong',
+    meals:{ b:true, l:true, d:true },
+    note:'✅ ALL MEALS INCLUDED TODAY — Breakfast at Hanoi Pearl then Lunch, Dinner and next morning Breakfast all on Verdure Grandeur Cruise. Nothing to buy!',
+    slots:[]
+  },
+  {
+    n:6, date:'Aug 19 (Wed)', title:'Cruise → Da Nang', tag:'tag-travel',
+    meals:{ b:true, l:false, d:false },
+    note:'Breakfast on cruise. Long airport gap (11AM–6PM) at Noi Bai T1. Dinner on arrival in Da Nang ~8PM.',
+    slots:[
+      { meal:'Lunch', time:'11:30–13:30', location:'Noi Bai Airport Terminal 1, Hanoi',
+        options:[
+          { type:'viet', name:'Pho 24 Airport (T1)', rating:'⭐ 3.8/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Pho Ga, veg rice sets — ask for chay version for Revanth', vndPrice:85000, address:'Noi Bai Airport Terminal 1', note:'Reliable airport chain. Ask for Pho Chay for Revanth. Best option for the airport gap' },
+          { type:'indian', name:'Ganesh Hanoi (nearby, taxi required)', rating:'⭐ 4.3/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Quick biryani, naan, curry', vndPrice:180000, address:'Near airport area', note:'Only if you have 2+ hours and want to venture out. 15 min by taxi' }
+        ]
+      },
+      { meal:'Dinner', time:'20:00–22:00', location:'Da Nang (near Blue Sun Hotel)',
+        options:[
+          { type:'viet', name:'Mi Quang Ba Mua', rating:'⭐ 4.6/5', for:'dp-chick', forLabel:'🟡 Rohith·Sanjay·Sai', dish:'Turmeric noodles with chicken, peanuts, crispy crackers', vndPrice:55000, address:'95 Nguyen Tri Phuong, Da Nang', note:'Da Nang\'s most iconic dish — must try on first night in the city' },
+          { type:'viet', name:'Kurumi Vegan', rating:'⭐ 4.7/5', for:'dp-veg', forLabel:'🔵 Revanth', dish:'Italian Banh Mi with cashew brie, tofu Benedict, soups, pastas', vndPrice:110000, address:'Near My Khe Beach, Da Nang', note:'10 min from Blue Sun. Revanth\'s best dinner option in Da Nang. GrabFood delivery available' },
+          { type:'indian', name:'Ganesh Da Nang', rating:'⭐ 4.5/5 (22 reviews)', for:'dp-all', forLabel:'🟢 All 4', dish:'Tandoori chicken platter, lamb biryani, paneer dishes', vndPrice:190000, address:'187 Le Quang Dao, Ngu Hanh Son', note:'Comfort food after long travel day. 10 min from Blue Sun hotel. Open until 10PM' }
+        ]
+      }
+    ]
+  },
+  {
+    n:7, date:'Aug 20 (Thu)', title:'Cham Island + Hoi An', tag:'tag-danang',
+    meals:{ b:true, l:true, d:false },
+    note:'Breakfast at Blue Sun. Lunch included at Bai Ong restaurant on Cham Island. Dinner in Hoi An Ancient Town — best food night of the trip!',
+    slots:[
+      { meal:'Dinner', time:'17:00–21:00', location:'Hoi An Ancient Town',
+        options:[
+          { type:'viet', name:'Banh Mi Phuong', rating:'⭐ 4.5/5 (3,783 reviews)', for:'dp-chick', forLabel:'🟡 Rohith·Sanjay·Sai', dish:'Banh Mi Ga (chicken) — CNN world\'s best sandwich. ~20,000–50,000 VND', vndPrice:35000, address:'2B Phan Chau Trinh, Hoi An', note:'Grab as a walking snack around the Ancient Town. Queue is worth it' },
+          { type:'viet', name:'Banh Mi Phuong', rating:'⭐ 4.5/5', for:'dp-veg', forLabel:'🔵 Revanth', dish:'Banh Mi Chay — avocado, tofu & peanut butter vegan version', vndPrice:35000, address:'2B Phan Chau Trinh, Hoi An', note:'Same place, vegan version available — tell them "Banh Mi Chay"' },
+          { type:'viet', name:'Chickpea Eatery', rating:'⭐ 4.8/5', for:'dp-veg', forLabel:'🔵 Revanth', dish:'Vegan Cao Lau, pumpkin curry, caramelized tofu, vegan chicken rice', vndPrice:120000, address:'Hoi An Old Town', note:'Revanth\'s absolute best meal of the trip. Open until 9PM — book or go early' },
+          { type:'viet', name:'White Rose Restaurant', rating:'⭐ 4.6/5', for:'dp-all', forLabel:'🟢 All 4', dish:'White Rose dumplings — Hoi An exclusive, 3-generation secret recipe. Veg version available', vndPrice:80000, address:'Hoi An Old Town', note:'A Hoi An exclusive — can ONLY get this here. Do not miss' },
+          { type:'viet', name:'Com Ga stalls', rating:'⭐ 4.5/5', for:'dp-chick', forLabel:'🟡 Rohith·Sanjay·Sai', dish:'Com Ga Hoi An — famous chicken rice over yellow turmeric rice', vndPrice:50000, address:'Around Hoi An Old Town', note:'Hoi An\'s most iconic dish. Street stalls dotted around the town' }
+        ]
+      }
+    ]
+  },
+  {
+    n:8, date:'Aug 21 (Fri)', title:'Ba Na Hills + Golden Bridge', tag:'tag-danang',
+    meals:{ b:true, l:false, d:false },
+    note:'Breakfast at Blue Sun. Lunch inside Ba Na Hills park (tourist zone — higher prices). Dinner back in Da Nang.',
+    slots:[
+      { meal:'Lunch', time:'12:00–13:30', location:'Ba Na Hills (inside park)',
+        options:[
+          { type:'viet', name:'In-park restaurants (Ba Na Hills)', rating:'⭐ 3.5/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Vietnamese rice sets, noodle soups, veg options available', vndPrice:200000, address:'Inside Ba Na Hills Park', note:'Tourist zone — prices higher than outside. Budget ₫150,000–300,000/person. Veg options available for Revanth' }
+        ]
+      },
+      { meal:'Dinner', time:'18:00–21:00', location:'Da Nang (near Blue Sun Hotel)',
+        options:[
+          { type:'viet', name:'Mi Quang Ba Mua', rating:'⭐ 4.6/5', for:'dp-chick', forLabel:'🟡 Rohith·Sanjay·Sai', dish:'Turmeric noodles with chicken, peanuts, crispy crackers — Da Nang signature', vndPrice:55000, address:'95 Nguyen Tri Phuong, Da Nang', note:'If you haven\'t tried it yet — tonight is the night' },
+          { type:'viet', name:'Loving Vegan Restaurant', rating:'⭐ 4.5/5', for:'dp-veg', forLabel:'🔵 Revanth', dish:'Mozza sticks, cashew Mac & cheese, Korean spicy noodles, Banh Xeo', vndPrice:95000, address:'61 Le Quang Dao, Da Nang', note:'Near Blue Sun hotel. GrabFood delivery available' },
+          { type:'indian', name:'Rang Da Nang', rating:'⭐ 4.9/5 (968 reviews)', for:'dp-all', forLabel:'🟢 All 4', dish:'Hyderabadi Biryani, Chicken Seekh Kebab, Tandoori Chicken', vndPrice:220000, address:'Da Nang city', note:'#17 of 1,772 restaurants in Da Nang! Reserve ahead for weekends. Best Indian of the trip' },
+          { type:'indian', name:'Ganesh Da Nang', rating:'⭐ 4.5/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Consistent quality — fallback if Rang is full', vndPrice:190000, address:'187 Le Quang Dao, Da Nang', note:'Reliable fallback option — same street as Blue Sun hotel area' }
+        ]
+      }
+    ]
+  },
+  {
+    n:9, date:'Aug 22 (Sat)', title:'Departure Day', tag:'tag-travel',
+    meals:{ b:true, l:false, d:false },
+    note:'✅ Breakfast at Blue Sun included. Sai & Revanth depart by 09:00 for MH-747. Rohith & Sanjay depart ~12:00 for VN-0633. Nothing else to buy!',
+    slots:[]
+  }
+];
+
+function buildMealPrices(usdInr, audInr, usdVnd) {
+  const vndTimeEl = document.getElementById('vnd-time');
+  if(vndTimeEl) vndTimeEl.textContent = 'Rates as of Jul 3, 2026';
+  const inrPerVnd = usdInr / usdVnd;
+  const audPerVnd = 1 / (audInr / usdInr * usdVnd);
+
+  const container = document.getElementById('meal-days-container');
+  if(container.children.length > 0) {
+    // update prices only
+    document.querySelectorAll('[data-vnd-price]').forEach(el => {
+      const vnd = parseInt(el.dataset.vndPrice);
+      const inr = Math.round(vnd * inrPerVnd);
+      const aud = (vnd / (usdVnd / (usdInr/audInr))).toFixed(2);
+      el.innerHTML = `<span class="vnd-p">₫${vnd.toLocaleString()}</span> <span style="color:var(--ink-light);font-size:11px;">= ₹${inr.toLocaleString()} = A$${aud}</span>`;
+    });
+    return;
+  }
+
+  // build HTML
+  mealDays.forEach((d, i) => {
+    const card = document.createElement('div');
+    card.className = 'day-card' + (i===0?' open':'');
+
+    const mealStatus = [
+      `<span style="font-size:11px;padding:2px 8px;border-radius:99px;font-weight:600;${d.meals.b?'background:#edf6f1;color:#1e6b45;border:1px solid #b0d9c0':'background:#fdf0f0;color:#b83232;border:1px solid #e8b0b0'}">🍳 B ${d.meals.b?'✅':'❌'}</span>`,
+      `<span style="font-size:11px;padding:2px 8px;border-radius:99px;font-weight:600;${d.meals.l?'background:#edf6f1;color:#1e6b45;border:1px solid #b0d9c0':'background:#fdf0f0;color:#b83232;border:1px solid #e8b0b0'}">🍱 L ${d.meals.l?'✅':'❌'}</span>`,
+      `<span style="font-size:11px;padding:2px 8px;border-radius:99px;font-weight:600;${d.meals.d?'background:#edf6f1;color:#1e6b45;border:1px solid #b0d9c0':'background:#fdf0f0;color:#b83232;border:1px solid #e8b0b0'}">🌙 D ${d.meals.d?'✅':'❌'}</span>`
+    ].join(' ');
+
+    let slotsHTML = d.slots.length === 0 ? `<div class="note-card tip" style="margin-top:12px;"><div class="note-icon">✅</div><div>${d.note}</div></div>` : '';
+
+    d.slots.forEach(slot => {
+      const optionsHTML = slot.options.map(opt => {
+        const vnd = opt.vndPrice;
+        const inr = Math.round(vnd * inrPerVnd);
+        const aud = (vnd / (usdVnd / (usdInr / audInr))).toFixed(2);
+        const typeIcon = opt.type === 'indian' ? '🇮🇳' : opt.type === 'viet' ? '🇻🇳' : '🏪';
+        const typeLabel = opt.type === 'indian' ? 'Indian' : opt.type === 'viet' ? 'Vietnamese' : 'Other';
+        const typeLabelColor = opt.type === 'indian' ? '#7a3a10' : opt.type === 'viet' ? '#1e6b45' : '#444';
+        const typeLabelBg = opt.type === 'indian' ? '#fff0e0' : opt.type === 'viet' ? '#edf6f1' : '#f0f0f0';
+        const typeBg = opt.type === 'indian' ? 'background:#fff8f0;border-color:#f0c880;' : opt.type === 'viet' ? 'background:#f8fff8;border-color:#b0d9b0;' : 'background:#f8f8f8;border-color:#ddd;';
+        return `
+          <div class="rest-card" style="${typeBg}">
+            <div class="rest-card-top">
+              <div class="rest-name">${typeIcon} ${opt.name} <span style="font-size:10px;font-weight:600;padding:2px 8px;border-radius:99px;background:${typeLabelBg};color:${typeLabelColor};border:1px solid ${typeLabelColor}30;vertical-align:middle;margin-left:4px;">[${typeLabel}]</span></div>
+              <div class="rest-rating">${opt.rating}</div>
+            </div>
+            <div class="rest-diet"><span class="diet-pill ${opt.for}" style="font-size:10px;padding:2px 8px;">${opt.forLabel}</span></div>
+            <div class="rest-dishes"><strong>Try:</strong> ${opt.dish}</div>
+            <div class="mrc-price" data-vnd-price="${vnd}" style="margin:8px 0;padding:8px;background:rgba(0,0,0,0.03);border-radius:7px;">
+              <span class="vnd-p">₫${vnd.toLocaleString()}</span> <span style="color:var(--ink-light);font-size:11px;">= ₹${inr.toLocaleString()} = A$${aud}</span>
+            </div>
+            <div class="rest-meta">📍 ${opt.address}<br>${opt.note}</div>
+          </div>`;
+      }).join('');
+
+      slotsHTML += `
+        <div style="margin-top:16px;">
+          <div style="font-size:12px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">
+            🍽️ ${slot.meal} · ${slot.time} · ${slot.location}
+          </div>
+          <div class="rest-grid">${optionsHTML}</div>
+        </div>`;
+    });
+
+    if(d.slots.length > 0) {
+      slotsHTML = `<div class="note-card info" style="margin-top:12px;margin-bottom:4px;"><div class="note-icon">📝</div><div>${d.note}</div></div>` + slotsHTML;
+    }
+
+    card.innerHTML = `
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">${d.n}</div>
+        <div class="day-info">
+          <div class="day-date">${d.date}</div>
+          <div class="day-title">${d.title}</div>
+          <div class="day-meta" style="display:flex;gap:6px;margin-top:4px;">${mealStatus}</div>
+        </div>
+        <div class="day-chevron"${i===0?' style="transform:rotate(180deg)"':''}>▾</div>
+      </div>
+      <div class="day-body">${slotsHTML}</div>`;
+    container.appendChild(card);
+  });
 }
 
 // ── NAV ACTIVE ──────────────────────────────────────────────────────────────
