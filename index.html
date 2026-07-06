@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vietnam 2026 — Heritage Trip</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Vietnam</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -510,6 +510,40 @@ nav a:hover, nav a.active { color: var(--white); border-bottom-color: var(--gold
   font-size: 14px; font-weight: 600; color: var(--green);
 }
 
+/* ── SHIMMER CREDIT ── */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.creator-credit {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #c9973a, #fff5d6, #e8b84b, #fff5d6, #c9973a);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+  display: inline-block;
+  letter-spacing: 0.02em;
+}
+.creator-wrap {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(201,151,58,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.creator-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 /* ── FOOTER ── */
 footer {
   background: linear-gradient(135deg, var(--navy) 0%, #0d1d35 100%);
@@ -543,8 +577,8 @@ footer a { color: var(--gold); text-decoration: none; }
   <div class="hero-deco">VIETNAM</div>
   <div style="position:relative;z-index:1;">
     <div class="hero-eyebrow">Trip Overview · August 2026</div>
-    <h1>Heritage Vietnam
-      <em>Mr. Rohith &amp; Group</em>
+    <h1>Just Vietnam
+      <em>August 2026</em>
     </h1>
     <div class="hero-ref">Booking Ref: PMQ0612 &nbsp;·&nbsp; Sales: Ms April &nbsp;·&nbsp; Phu Minh Quang Travel</div>
     <div class="hero-pills">
@@ -622,7 +656,7 @@ footer a { color: var(--gold); text-decoration: none; }
   <div class="checklist-group">
     <div class="cg-label cg-done">✓ Completed</div>
     <div class="check-item done" data-id="deposit"><div class="checkbox">✓</div><div class="ci-body"><div class="ci-title">50% deposit paid — USD 1,508</div><div class="ci-sub">Paid Jun 14 via VND bank transfer to Phu Minh Quang Travel. Keep receipt.</div></div></div>
-    <div class="check-item done" data-id="evisa"><div class="checkbox">✓</div><div class="ci-body"><div class="ci-title">Vietnam e-Visa applied for all 4 pax</div><div class="ci-sub">INR 4,600 per person (INR 18,400 total) paid via agent. Awaiting approval — print copies before travel.</div></div></div>
+    <div class="check-item done" data-id="evisa"><div class="checkbox">✓</div><div class="ci-body"><div class="ci-title">Vietnam e-Visa approved for all 4 pax ✓</div><div class="ci-sub">INR 4,600 per person (INR 18,400 total) paid via agent. All 4 visas approved and received. Print copies before travel.</div></div></div>
     <div class="check-item done" data-id="mel"><div class="checkbox">✓</div><div class="ci-body"><div class="ci-title">Verified Melbourne (MEL) airport code on Australian tickets</div><div class="ci-sub">Confirmed — was a typo only, actual tickets are correct.</div></div></div>
     <div class="check-item done" data-id="rate"><div class="checkbox">✓</div><div class="ci-body"><div class="ci-title">USD 754/person rate locked by April</div><div class="ci-sub">Confirmed despite Jun 15 validity expiry. Verbal confirmation received from April.</div></div></div>
     <div class="check-item done" data-id="payment2"><div class="checkbox">✓</div><div class="ci-body"><div class="ci-title">Second payment terms clarified</div><div class="ci-sub">USD 1,508 due Aug 19 in Da Nang — cash or VND bank transfer (same account as 1st payment).</div></div></div>
@@ -631,12 +665,12 @@ footer a { color: var(--gold); text-decoration: none; }
 
   <div class="checklist-group">
     <div class="cg-label" style="background:#fdf0f0;color:#8b1a1a;border:1px solid #e8b0b0;">🚨 Action This Week</div>
-    <div class="check-item" data-id="bridging"><div class="checkbox"></div><div class="ci-body"><div class="ci-title">⚡ Revanth — Apply for Bridging Visa B (BVB) NOW — deadline by July 2 at latest</div><div class="ci-sub">Current processing for Indian passport holders: 4–6 weeks (manual integrity checks apply). Must be GRANTED before departing Adelaide on Aug 13 — apply this week. Fee: AUD 190 non-refundable. Via ImmiAccount → include Statement of Reason (holiday) + confirmed flight itinerary. If BVA expires outside Australia re-entry is not possible.</div></div></div>
+    <div class="check-item done" data-id="bridging"><div class="checkbox">✓</div><div class="ci-body"><div class="ci-title">Revanth — Bridging Visa B (BVB) applied ✓</div><div class="ci-sub">BVB application submitted. Monitor ImmiAccount for approval before departing Adelaide on Aug 13. Fee AUD 190 paid.</div></div></div>
   </div>
 
   <div class="checklist-group">
     <div class="cg-label cg-soon">⏰ Before August 1</div>
-    <div class="check-item" data-id="evisa-confirm"><div class="checkbox"></div><div class="ci-body"><div class="ci-title">Confirm e-Visa approved for all 4 pax + print copies</div><div class="ci-sub">Check approval status. Print hard copies — agent recommends for smooth immigration at Noi Bai.</div></div></div>
+    <div class="check-item done" data-id="evisa-confirm"><div class="checkbox">✓</div><div class="ci-body"><div class="ci-title">e-Visa approved for all 4 pax ✓</div><div class="ci-sub">All 4 e-Visas received and approved. Print hard copies before travel — agent recommends for smooth immigration at Noi Bai.</div></div></div>
     <div class="check-item" data-id="insurance"><div class="checkbox"></div><div class="ci-body"><div class="ci-title">Arrange travel insurance for all 4 pax</div><div class="ci-sub">Compulsory per itinerary but excluded from package. Must cover medical + trip cancellation.</div></div></div>
   </div>
 
@@ -1552,10 +1586,13 @@ footer a { color: var(--gold); text-decoration: none; }
 </div>
 
 <footer>
-  <strong>Heritage Vietnam 2026</strong>
+  <strong>Just Vietnam 2026</strong>
   <div class="footer-names">Rohith · Sanjay · Sai Krishna · Revanth</div>
-  Phu Minh Quang Travel · Booking PMQ0612 · Sales: Ms April<br>
-  <a href="mailto:director@phuminhquangtravel.com">director@phuminhquangtravel.com</a> &nbsp;·&nbsp; +84 236 7 307 797
+  <div class="creator-wrap">
+    <span class="creator-label">Created by</span>
+    <span class="creator-credit">Sai Krishna Adepu</span>
+    <span class="creator-label">✨</span>
+  </div>
 </footer>
 
 <script>
@@ -1592,7 +1629,7 @@ function updateProgress() {
 updateProgress();
 
 // ── COST TABLE ──────────────────────────────────────────────────────────────
-async function buildCosts() {
+function buildCosts() {
   // Rates as of Jul 3, 2026 — hardcoded for reliability
   const usdInr = 94.63;
   const usdAud = 1.4495;
@@ -1782,7 +1819,7 @@ async function buildCosts() {
 
   document.getElementById('cost-tbody').innerHTML = rows;
   // now build meal planner with same rates
-  buildMealPrices(usdInr, audInr, usdVnd);
+  buildMealPrices();
 }
 buildCosts();
 
@@ -1831,232 +1868,252 @@ function switchFood(tab, panel) {
 }
 
 // ── MEAL PLANNER ────────────────────────────────────────────────────────────
-const mealDays = [
-  {
-    n:1, date:'Aug 14 (Fri)', title:'Hanoi Arrival', tag:'tag-travel',
-    meals:{ b:false, l:false, d:false },
-    note:'Quick meals before bus departs 15:00. Late night arrival in Sapa ~11PM — most restaurants closed.',
-    slots:[
-      { meal:'Lunch', time:'11:00–13:00', location:'Hanoi (near bus stop)',
-        options:[
-          { type:'viet', name:'Pho 10 Ly Quoc Su', rating:'⭐ 4.6/5', for:'dp-chick', forLabel:'🟡 Rohith·Sanjay·Sai', dish:'Pho Ga (chicken pho)', vndPrice:70000, address:'Ly Quoc Su St, Old Quarter', note:'Iconic Hanoi chicken pho — locals eat here daily' },
-          { type:'viet', name:'Katze Vegan', rating:'⭐ 4.7/5', for:'dp-veg', forLabel:'🔵 Revanth', dish:'Fried vegan spring rolls, banana flower salad', vndPrice:85000, address:'43B Hang Be, Hoan Kiem', note:'Best veg option near Old Quarter' },
-          { type:'indian', name:'Namaste Hanoi', rating:'⭐ 4.6/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Butter chicken, garlic naan, dal makhani', vndPrice:180000, address:'46 Tho Nhuom St, Hoan Kiem', note:'If time allows before bus — 5 min from Old Quarter' }
-        ]
-      },
-      { meal:'Dinner', time:'Late night Sapa', location:'Sapa (limited options)',
-        options:[
-          { type:'viet', name:'7-Eleven / Circle K Sapa', rating:'—', for:'dp-all', forLabel:'🟢 All 4', dish:'Instant noodles, snacks, drinks', vndPrice:25000, address:'Sapa town centre', note:'Arrival ~11PM — most restaurants closed. Stock up here' }
-        ]
-      }
-    ]
-  },
-  {
-    n:2, date:'Aug 15 (Sat)', title:'Fansipan + Glass Bridge', tag:'tag-sapa',
-    meals:{ b:true, l:false, d:false },
-    note:'Breakfast at Charm Sapa. Lunch at Fansipan summit. Back in Sapa town for dinner.',
-    slots:[
-      { meal:'Lunch', time:'~12:00–13:30', location:'Fansipan Summit',
-        options:[
-          { type:'viet', name:'Do Quyen Restaurant (Fansipan top)', rating:'⭐ 4.2/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Mountain chicken soup, rice sets, tofu dishes for Revanth', vndPrice:120000, address:'Fansipan Summit, 3143m', note:'Only restaurant at the summit — basic but an incredible experience' }
-        ]
-      },
-      { meal:'Dinner', time:'18:00–20:30', location:'Sapa Town',
-        options:[
-          { type:'viet', name:'Good Morning Vietnam', rating:'⭐ 4.6/5 (1,463 reviews)', for:'dp-all', forLabel:'🟢 All 4', dish:'Chicken curry in coconut (signature), pumpkin soup, veg fried rice', vndPrice:130000, address:'Sapa town centre', note:'Most reviewed restaurant in Sapa — Revanth: pumpkin soup + veg fried rice' },
-          { type:'viet', name:'Nature View Restaurant', rating:'⭐ 4.5/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Chicken lemongrass sauté, tofu clay pot, great valley views', vndPrice:150000, address:'Sapa town centre', note:'More upscale option, stunning views' },
-          { type:'indian', name:'Gujarat Indian Restaurant', rating:'⭐ 4.2/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Gujarati Thali, Paneer Butter Masala, Veg Biryani', vndPrice:160000, address:'Sapa town centre', note:'Only Indian option in Sapa — perfect for Revanth, pure veg kitchen' }
-        ]
-      }
-    ]
-  },
-  {
-    n:3, date:'Aug 16 (Sun)', title:'Cat Cat Village → Bus to Hanoi', tag:'tag-travel',
-    meals:{ b:true, l:false, d:false },
-    note:'Breakfast at hotel. Lunch in Sapa town before 15:00 bus. Dinner skipped — overnight bus back to Hanoi.',
-    slots:[
-      { meal:'Lunch', time:'12:00–14:00', location:'Sapa Town (before 15:00 bus)',
-        options:[
-          { type:'viet', name:'Good Morning View Restaurant', rating:'⭐ 4.8/5 (697 reviews)', for:'dp-all', forLabel:'🟢 All 4', dish:'Chicken curry in coconut, bamboo rice, spring rolls', vndPrice:140000, address:'Sapa town centre', note:'Highest rated restaurant in Sapa. Owner Kenny is legendary — go early to get a seat' },
-          { type:'viet', name:'Thong Dong Vegan Kitchen', rating:'⭐ 4.6/5', for:'dp-veg', forLabel:'🔵 Revanth', dish:'Colourful tofu rice, veg noodle soup, creative plant-based dishes', vndPrice:90000, address:'08B Hoang Dieu, Sapa', note:'Perfect for Revanth. Also great for the whole group' },
-          { type:'indian', name:'Gujarat Indian Restaurant', rating:'⭐ 4.2/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Punjabi Thali, Dal Makhani, Naan', vndPrice:160000, address:'Sapa town centre', note:'Go early before bus — closes afternoon. Good last Indian meal before Hanoi' }
-        ]
-      }
-    ]
-  },
-  {
-    n:4, date:'Aug 17 (Mon)', title:'Ninh Binh Day Tour', tag:'tag-hanoi',
-    meals:{ b:true, l:false, d:false },
-    note:'Breakfast at Hanoi Pearl. Lunch in Ninh Binh during tour. Dinner back in Hanoi Old Quarter.',
-    slots:[
-      { meal:'Lunch', time:'~13:00–14:30', location:'Ninh Binh (near Trang An)',
-        options:[
-          { type:'viet', name:'Local restaurant near Trang An (guide rec)', rating:'⭐ ~4.3/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Com nieu (clay pot rice), Ga nuong (mountain grilled chicken), veg stir fries for Revanth', vndPrice:100000, address:'Near Trang An, Ninh Binh', note:'Your guide will recommend the best local spot. Mountain chicken (Ga nuong) is the Ninh Binh speciality' }
-        ]
-      },
-      { meal:'Dinner', time:'19:00–21:00', location:'Hanoi Old Quarter',
-        options:[
-          { type:'viet', name:'Bun Cha Huong Lien', rating:'⭐ 4.5/5', for:'dp-chick', forLabel:'🟡 Rohith·Sanjay·Sai', dish:'Bun Cha — Obama\'s famous Hanoi meal. Grilled pork patties with noodles', vndPrice:75000, address:'Near Hanoi Old Quarter', note:'Contains pork — Revanth must skip. Iconic Hanoi experience' },
-          { type:'viet', name:'Dana Vegan House', rating:'⭐ 4.6/5', for:'dp-veg', forLabel:'🔵 Revanth', dish:'Thanh Lang mushroom soup, vegan buffet, traditional house ambiance', vndPrice:95000, address:'1 Tong Duy Tan, Hoan Kiem', note:'Beautiful 100-year-old traditional Vietnamese house — Revanth\'s dinner while others have Bun Cha' },
-          { type:'indian', name:'Namaste Hanoi', rating:'⭐ 4.6/5 (3,850 reviews)', for:'dp-all', forLabel:'🟢 All 4', dish:'Tandoori chicken, biryani, dal makhani, garlic naan', vndPrice:180000, address:'46 Tho Nhuom St, Hoan Kiem', note:'5 min from Hanoi Pearl. Great first full Indian dinner in Hanoi' },
-          { type:'indian', name:'Ram Krishna Vegetarian', rating:'⭐ 4.5/5', for:'dp-veg', forLabel:'🔵 Revanth', dish:'Pure veg — Paneer Tikka, Gujarati Thali, Jain-friendly on request', vndPrice:150000, address:'Hanoi Old Quarter', note:'Perfect veg Indian option for Revanth if others go to Namaste' }
-        ]
-      }
-    ]
-  },
-  {
-    n:5, date:'Aug 18 (Tue)', title:'Halong Bay Cruise', tag:'tag-halong',
-    meals:{ b:true, l:true, d:true },
-    note:'✅ ALL MEALS INCLUDED TODAY — Breakfast at Hanoi Pearl then Lunch, Dinner and next morning Breakfast all on Verdure Grandeur Cruise. Nothing to buy!',
-    slots:[]
-  },
-  {
-    n:6, date:'Aug 19 (Wed)', title:'Cruise → Da Nang', tag:'tag-travel',
-    meals:{ b:true, l:false, d:false },
-    note:'Breakfast on cruise. Long airport gap (11AM–6PM) at Noi Bai T1. Dinner on arrival in Da Nang ~8PM.',
-    slots:[
-      { meal:'Lunch', time:'11:30–13:30', location:'Noi Bai Airport Terminal 1, Hanoi',
-        options:[
-          { type:'viet', name:'Pho 24 Airport (T1)', rating:'⭐ 3.8/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Pho Ga, veg rice sets — ask for chay version for Revanth', vndPrice:85000, address:'Noi Bai Airport Terminal 1', note:'Reliable airport chain. Ask for Pho Chay for Revanth. Best option for the airport gap' },
-          { type:'indian', name:'Ganesh Hanoi (nearby, taxi required)', rating:'⭐ 4.3/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Quick biryani, naan, curry', vndPrice:180000, address:'Near airport area', note:'Only if you have 2+ hours and want to venture out. 15 min by taxi' }
-        ]
-      },
-      { meal:'Dinner', time:'20:00–22:00', location:'Da Nang (near Blue Sun Hotel)',
-        options:[
-          { type:'viet', name:'Mi Quang Ba Mua', rating:'⭐ 4.6/5', for:'dp-chick', forLabel:'🟡 Rohith·Sanjay·Sai', dish:'Turmeric noodles with chicken, peanuts, crispy crackers', vndPrice:55000, address:'95 Nguyen Tri Phuong, Da Nang', note:'Da Nang\'s most iconic dish — must try on first night in the city' },
-          { type:'viet', name:'Kurumi Vegan', rating:'⭐ 4.7/5', for:'dp-veg', forLabel:'🔵 Revanth', dish:'Italian Banh Mi with cashew brie, tofu Benedict, soups, pastas', vndPrice:110000, address:'Near My Khe Beach, Da Nang', note:'10 min from Blue Sun. Revanth\'s best dinner option in Da Nang. GrabFood delivery available' },
-          { type:'indian', name:'Ganesh Da Nang', rating:'⭐ 4.5/5 (22 reviews)', for:'dp-all', forLabel:'🟢 All 4', dish:'Tandoori chicken platter, lamb biryani, paneer dishes', vndPrice:190000, address:'187 Le Quang Dao, Ngu Hanh Son', note:'Comfort food after long travel day. 10 min from Blue Sun hotel. Open until 10PM' }
-        ]
-      }
-    ]
-  },
-  {
-    n:7, date:'Aug 20 (Thu)', title:'Cham Island + Hoi An', tag:'tag-danang',
-    meals:{ b:true, l:true, d:false },
-    note:'Breakfast at Blue Sun. Lunch included at Bai Ong restaurant on Cham Island. Dinner in Hoi An Ancient Town — best food night of the trip!',
-    slots:[
-      { meal:'Dinner', time:'17:00–21:00', location:'Hoi An Ancient Town',
-        options:[
-          { type:'viet', name:'Banh Mi Phuong', rating:'⭐ 4.5/5 (3,783 reviews)', for:'dp-chick', forLabel:'🟡 Rohith·Sanjay·Sai', dish:'Banh Mi Ga (chicken) — CNN world\'s best sandwich. ~20,000–50,000 VND', vndPrice:35000, address:'2B Phan Chau Trinh, Hoi An', note:'Grab as a walking snack around the Ancient Town. Queue is worth it' },
-          { type:'viet', name:'Banh Mi Phuong', rating:'⭐ 4.5/5', for:'dp-veg', forLabel:'🔵 Revanth', dish:'Banh Mi Chay — avocado, tofu & peanut butter vegan version', vndPrice:35000, address:'2B Phan Chau Trinh, Hoi An', note:'Same place, vegan version available — tell them "Banh Mi Chay"' },
-          { type:'viet', name:'Chickpea Eatery', rating:'⭐ 4.8/5', for:'dp-veg', forLabel:'🔵 Revanth', dish:'Vegan Cao Lau, pumpkin curry, caramelized tofu, vegan chicken rice', vndPrice:120000, address:'Hoi An Old Town', note:'Revanth\'s absolute best meal of the trip. Open until 9PM — book or go early' },
-          { type:'viet', name:'White Rose Restaurant', rating:'⭐ 4.6/5', for:'dp-all', forLabel:'🟢 All 4', dish:'White Rose dumplings — Hoi An exclusive, 3-generation secret recipe. Veg version available', vndPrice:80000, address:'Hoi An Old Town', note:'A Hoi An exclusive — can ONLY get this here. Do not miss' },
-          { type:'viet', name:'Com Ga stalls', rating:'⭐ 4.5/5', for:'dp-chick', forLabel:'🟡 Rohith·Sanjay·Sai', dish:'Com Ga Hoi An — famous chicken rice over yellow turmeric rice', vndPrice:50000, address:'Around Hoi An Old Town', note:'Hoi An\'s most iconic dish. Street stalls dotted around the town' }
-        ]
-      }
-    ]
-  },
-  {
-    n:8, date:'Aug 21 (Fri)', title:'Ba Na Hills + Golden Bridge', tag:'tag-danang',
-    meals:{ b:true, l:false, d:false },
-    note:'Breakfast at Blue Sun. Lunch inside Ba Na Hills park (tourist zone — higher prices). Dinner back in Da Nang.',
-    slots:[
-      { meal:'Lunch', time:'12:00–13:30', location:'Ba Na Hills (inside park)',
-        options:[
-          { type:'viet', name:'In-park restaurants (Ba Na Hills)', rating:'⭐ 3.5/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Vietnamese rice sets, noodle soups, veg options available', vndPrice:200000, address:'Inside Ba Na Hills Park', note:'Tourist zone — prices higher than outside. Budget ₫150,000–300,000/person. Veg options available for Revanth' }
-        ]
-      },
-      { meal:'Dinner', time:'18:00–21:00', location:'Da Nang (near Blue Sun Hotel)',
-        options:[
-          { type:'viet', name:'Mi Quang Ba Mua', rating:'⭐ 4.6/5', for:'dp-chick', forLabel:'🟡 Rohith·Sanjay·Sai', dish:'Turmeric noodles with chicken, peanuts, crispy crackers — Da Nang signature', vndPrice:55000, address:'95 Nguyen Tri Phuong, Da Nang', note:'If you haven\'t tried it yet — tonight is the night' },
-          { type:'viet', name:'Loving Vegan Restaurant', rating:'⭐ 4.5/5', for:'dp-veg', forLabel:'🔵 Revanth', dish:'Mozza sticks, cashew Mac & cheese, Korean spicy noodles, Banh Xeo', vndPrice:95000, address:'61 Le Quang Dao, Da Nang', note:'Near Blue Sun hotel. GrabFood delivery available' },
-          { type:'indian', name:'Rang Da Nang', rating:'⭐ 4.9/5 (968 reviews)', for:'dp-all', forLabel:'🟢 All 4', dish:'Hyderabadi Biryani, Chicken Seekh Kebab, Tandoori Chicken', vndPrice:220000, address:'Da Nang city', note:'#17 of 1,772 restaurants in Da Nang! Reserve ahead for weekends. Best Indian of the trip' },
-          { type:'indian', name:'Ganesh Da Nang', rating:'⭐ 4.5/5', for:'dp-all', forLabel:'🟢 All 4', dish:'Consistent quality — fallback if Rang is full', vndPrice:190000, address:'187 Le Quang Dao, Da Nang', note:'Reliable fallback option — same street as Blue Sun hotel area' }
-        ]
-      }
-    ]
-  },
-  {
-    n:9, date:'Aug 22 (Sat)', title:'Departure Day', tag:'tag-travel',
-    meals:{ b:true, l:false, d:false },
-    note:'✅ Breakfast at Blue Sun included. Sai & Revanth depart by 09:00 for MH-747. Rohith & Sanjay depart ~12:00 for VN-0633. Nothing else to buy!',
-    slots:[]
-  }
-];
 
-function buildMealPrices(usdInr, audInr, usdVnd) {
+function buildMealPrices() {
+  // Hardcoded rates — Jul 5, 2026
+  const USD_INR = 94.63;
+  const AUD_INR = 65.28;
+  const VND_INR = USD_INR / 26315;
+  const VND_AUD = 1 / (26315 / (USD_INR / AUD_INR));
+
+  function prices(vnd) {
+    const inr = Math.round(vnd * VND_INR);
+    const aud = (vnd * VND_AUD).toFixed(2);
+    return `<span style="font-size:11px;color:#888;">₫${vnd.toLocaleString()} = ₹${inr.toLocaleString()} = A$${aud}</span>`;
+  }
+
   const vndTimeEl = document.getElementById('vnd-time');
-  if(vndTimeEl) vndTimeEl.textContent = 'Rates as of Jul 3, 2026';
-  const inrPerVnd = usdInr / usdVnd;
-  const audPerVnd = 1 / (audInr / usdInr * usdVnd);
+  if(vndTimeEl) vndTimeEl.textContent = 'Rates as of Jul 5, 2026';
+  document.querySelectorAll('.vnd-rate-display').forEach(el => { el.textContent = '1 USD = ₫26,315'; });
 
   const container = document.getElementById('meal-days-container');
-  if(container.children.length > 0) {
-    // update prices only
-    document.querySelectorAll('[data-vnd-price]').forEach(el => {
-      const vnd = parseInt(el.dataset.vndPrice);
-      const inr = Math.round(vnd * inrPerVnd);
-      const aud = (vnd / (usdVnd / (usdInr/audInr))).toFixed(2);
-      el.innerHTML = `<span class="vnd-p">₫${vnd.toLocaleString()}</span> <span style="color:var(--ink-light);font-size:11px;">= ₹${inr.toLocaleString()} = A$${aud}</span>`;
-    });
-    return;
-  }
+  if(!container) return;
+  container.innerHTML = '';
 
-  // build HTML
-  mealDays.forEach((d, i) => {
+  const allMealDays = [ // vndPrice = per person estimate
+    {
+      n:1, date:'Aug 14 (Fri)', title:'Hanoi Arrival', tag:'tag-travel',
+      meals:{b:false,l:false,d:false},
+      note:'Quick meals before bus departs 15:00. Late night arrival Sapa ~11PM — most restaurants closed.',
+      slots:[
+        { meal:'🍱 Lunch', time:'11:00–13:00', location:'Hanoi Old Quarter',
+          rows:[
+            {type:'viet', name:'Pho 10 Ly Quoc Su', rating:'4.6/5', for:'🟡', forLabel:'Rohith · Sanjay · Sai', dish:'Pho Ga — Hanoi\'s most iconic chicken pho', address:'Ly Quoc Su St, Old Quarter', vndPrice:70000},
+            {type:'viet', name:'Katze Vegan', rating:'4.7/5', for:'🔵', forLabel:'Revanth', dish:'Vegan spring rolls, banana flower salad', address:'43B Hang Be, Hoan Kiem', vndPrice:85000},
+            {type:'indian', name:'Namaste Hanoi', rating:'4.6/5', for:'🟢', forLabel:'All 4', dish:'Butter chicken, garlic naan, dal makhani', address:'46 Tho Nhuom St, Hoan Kiem', vndPrice:180000},
+          ]
+        },
+        { meal:'🌙 Dinner', time:'~23:00', location:'Sapa (late night arrival)',
+          rows:[
+            {type:'other', name:'7-Eleven / Circle K', rating:'—', for:'🟢', forLabel:'All 4', dish:'Instant noodles, snacks, drinks — most restaurants closed at 11PM', address:'Sapa town centre', vndPrice:25000},
+          ]
+        }
+      ]
+    },
+    {
+      n:2, date:'Aug 15 (Sat)', title:'Fansipan + Glass Bridge', tag:'tag-sapa',
+      meals:{b:true,l:false,d:false},
+      note:'Breakfast at Charm Sapa ✅. Lunch at Fansipan summit. Dinner in Sapa town.',
+      slots:[
+        { meal:'🍱 Lunch', time:'~12:00–13:30', location:'Fansipan Summit (3,143m)',
+          rows:[
+            {type:'viet', name:'Do Quyen Restaurant', rating:'4.2/5', for:'🟢', forLabel:'All 4', dish:'Mountain chicken soup, rice sets, tofu dishes for Revanth', address:'Fansipan Summit — only option at the top', vndPrice:120000},
+          ]
+        },
+        { meal:'🌙 Dinner', time:'18:00–20:30', location:'Sapa Town',
+          rows:[
+            {type:'viet', name:'Good Morning Vietnam', rating:'4.6/5 (1,463 reviews)', for:'🟢', forLabel:'All 4', dish:'Chicken curry in coconut (signature), pumpkin soup, veg fried rice', address:'Sapa town centre', vndPrice:130000},
+            {type:'viet', name:'Nature View Restaurant', rating:'4.5/5', for:'🟢', forLabel:'All 4', dish:'Chicken lemongrass sauté, tofu clay pot — great valley views', address:'Sapa town centre', vndPrice:150000},
+            {type:'indian', name:'Gujarat Indian Restaurant', rating:'4.2/5', for:'🟢', forLabel:'All 4', dish:'Gujarati Thali, Paneer Butter Masala, Veg Biryani — only Indian in Sapa', address:'Sapa town centre', vndPrice:160000},
+          ]
+        }
+      ]
+    },
+    {
+      n:3, date:'Aug 16 (Sun)', title:'Cat Cat Village → Bus to Hanoi', tag:'tag-travel',
+      meals:{b:true,l:false,d:false},
+      note:'Breakfast at hotel ✅. Lunch in Sapa before 15:00 bus. Dinner skipped — overnight bus.',
+      slots:[
+        { meal:'🍱 Lunch', time:'12:00–14:00', location:'Sapa Town (before 15:00 bus)',
+          rows:[
+            {type:'viet', name:'Good Morning View', rating:'4.8/5 (697 reviews)', for:'🟢', forLabel:'All 4', dish:'Chicken curry in coconut, bamboo rice, spring rolls — highest rated in Sapa', address:'Sapa town centre', vndPrice:140000},
+            {type:'viet', name:'Thong Dong Vegan Kitchen', rating:'4.6/5', for:'🔵', forLabel:'Revanth', dish:'Colourful tofu rice, veg noodle soup, creative plant-based dishes', address:'08B Hoang Dieu, Sapa', vndPrice:90000},
+            {type:'indian', name:'Gujarat Indian Restaurant', rating:'4.2/5', for:'🟢', forLabel:'All 4', dish:'Punjabi Thali, Dal Makhani, Naan — go early before bus', address:'Sapa town centre', vndPrice:160000},
+          ]
+        }
+      ]
+    },
+    {
+      n:4, date:'Aug 17 (Mon)', title:'Ninh Binh Day Tour', tag:'tag-hanoi',
+      meals:{b:true,l:false,d:false},
+      note:'Breakfast at Hanoi Pearl ✅. Lunch in Ninh Binh. Dinner back in Hanoi Old Quarter.',
+      slots:[
+        { meal:'🍱 Lunch', time:'~13:00–14:30', location:'Near Trang An, Ninh Binh',
+          rows:[
+            {type:'viet', name:'Local restaurant (guide rec)', rating:'~4.3/5', for:'🟢', forLabel:'All 4', dish:'Com nieu (clay pot rice), Ga nuong (grilled mountain chicken), veg stir fries for Revanth', address:'Near Trang An — guide will recommend', vndPrice:100000},
+          ]
+        },
+        { meal:'🌙 Dinner', time:'19:00–21:00', location:'Hanoi Old Quarter',
+          rows:[
+            {type:'viet', name:'Bun Cha Huong Lien', rating:'4.5/5', for:'🟡', forLabel:'Rohith · Sanjay · Sai', dish:'Bun Cha — Obama\'s famous Hanoi meal. Contains pork — Revanth skip', address:'Near Hanoi Old Quarter', vndPrice:75000},
+            {type:'viet', name:'Dana Vegan House', rating:'4.6/5', for:'🔵', forLabel:'Revanth', dish:'Thanh Lang mushroom soup, vegan buffet, 100-year-old traditional house', address:'1 Tong Duy Tan, Hoan Kiem', vndPrice:95000},
+            {type:'indian', name:'Namaste Hanoi', rating:'4.6/5 (3,850 reviews)', for:'🟢', forLabel:'All 4', dish:'Tandoori chicken, biryani, dal makhani — 5 min from Hanoi Pearl', address:'46 Tho Nhuom St, Hoan Kiem', vndPrice:180000},
+            {type:'indian', name:'Ram Krishna Vegetarian', rating:'4.5/5', for:'🔵', forLabel:'Revanth', dish:'Pure veg Indian — Paneer Tikka, Gujarati Thali, Jain-friendly', address:'Hanoi Old Quarter', vndPrice:150000},
+          ]
+        }
+      ]
+    },
+    {
+      n:5, date:'Aug 18 (Tue)', title:'Halong Bay Cruise', tag:'tag-halong',
+      meals:{b:true,l:true,d:true},
+      note:'✅ ALL MEALS INCLUDED — Breakfast at Hanoi Pearl + Lunch, Dinner and next morning Breakfast on Verdure Grandeur Cruise. Nothing to buy today!',
+      slots:[]
+    },
+    {
+      n:6, date:'Aug 19 (Wed)', title:'Cruise → Da Nang', tag:'tag-travel',
+      meals:{b:true,l:false,d:false},
+      note:'Breakfast on cruise ✅. Long gap at Noi Bai Airport (11AM–6PM). Dinner on arrival in Da Nang ~8PM.',
+      slots:[
+        { meal:'🍱 Lunch', time:'11:30–13:30', location:'Noi Bai Airport Terminal 1',
+          rows:[
+            {type:'viet', name:'Pho 24 Airport (T1)', rating:'3.8/5', for:'🟢', forLabel:'All 4', dish:'Pho Ga, veg rice sets — ask "Pho Chay" for Revanth', address:'Noi Bai Airport Terminal 1', vndPrice:85000},
+            {type:'indian', name:'Ganesh Hanoi (taxi 15 min)', rating:'4.3/5', for:'🟢', forLabel:'All 4', dish:'Quick biryani, naan, curry — only if 2+ hours spare', address:'Near airport area', vndPrice:180000},
+          ]
+        },
+        { meal:'🌙 Dinner', time:'20:00–22:00', location:'Da Nang (near Blue Sun Hotel)',
+          rows:[
+            {type:'viet', name:'Mi Quang Ba Mua', rating:'4.6/5', for:'🟡', forLabel:'Rohith · Sanjay · Sai', dish:'Turmeric noodles with chicken, peanuts, crispy crackers — Da Nang signature', address:'95 Nguyen Tri Phuong, Da Nang', vndPrice:55000},
+            {type:'viet', name:'Kurumi Vegan', rating:'4.7/5', for:'🔵', forLabel:'Revanth', dish:'Italian Banh Mi, tofu Benedict, soups, pastas — GrabFood delivery available', address:'Near My Khe Beach, Da Nang', vndPrice:110000},
+            {type:'indian', name:'Ganesh Da Nang', rating:'4.5/5 (22 reviews)', for:'🟢', forLabel:'All 4', dish:'Tandoori chicken platter, biryani, paneer — 10 min from Blue Sun', address:'187 Le Quang Dao, Ngu Hanh Son', vndPrice:190000},
+          ]
+        }
+      ]
+    },
+    {
+      n:7, date:'Aug 20 (Thu)', title:'Cham Island + Hoi An', tag:'tag-danang',
+      meals:{b:true,l:true,d:false},
+      note:'Breakfast at Blue Sun ✅. Lunch included at Bai Ong (Cham Island) ✅. Dinner only in Hoi An — best food night of the trip!',
+      slots:[
+        { meal:'🌙 Dinner', time:'17:00–21:00', location:'Hoi An Ancient Town',
+          rows:[
+            {type:'viet', name:'Banh Mi Phuong', rating:'4.5/5 (3,783 reviews)', for:'🟡', forLabel:'Rohith · Sanjay · Sai', dish:'Banh Mi Ga (chicken) — CNN world\'s best sandwich. Walking snack', address:'2B Phan Chau Trinh, Hoi An', vndPrice:35000},
+            {type:'viet', name:'Banh Mi Phuong (Chay)', rating:'4.5/5', for:'🔵', forLabel:'Revanth', dish:'Banh Mi Chay — avocado, tofu & peanut butter vegan version', address:'2B Phan Chau Trinh, Hoi An', vndPrice:35000},
+            {type:'viet', name:'Chickpea Eatery', rating:'4.8/5', for:'🔵', forLabel:'Revanth', dish:'Vegan Cao Lau, pumpkin curry, caramelized tofu — Revanth\'s best meal of the trip!', address:'Hoi An Old Town (open till 9PM)', vndPrice:120000},
+            {type:'viet', name:'White Rose Restaurant', rating:'4.6/5', for:'🟢', forLabel:'All 4', dish:'White Rose dumplings — Hoi An exclusive, 3-gen secret recipe, veg version available', address:'Hoi An Old Town', vndPrice:80000},
+            {type:'viet', name:'Com Ga stalls', rating:'4.5/5', for:'🟡', forLabel:'Rohith · Sanjay · Sai', dish:'Com Ga Hoi An — famous chicken rice over yellow turmeric rice', address:'Around Hoi An Old Town', vndPrice:50000},
+            {type:'other', name:'⚠️ No Indian restaurants', rating:'—', for:'🟢', forLabel:'All 4', dish:'No Indian options in Hoi An Old Town — enjoy local Vietnamese food tonight!', address:'Hoi An Old Town', vndPrice:0},
+          ]
+        }
+      ]
+    },
+    {
+      n:8, date:'Aug 21 (Fri)', title:'Ba Na Hills + Golden Bridge', tag:'tag-danang',
+      meals:{b:true,l:false,d:false},
+      note:'Breakfast at Blue Sun ✅. Lunch inside Ba Na Hills (tourist zone — higher prices). Dinner in Da Nang.',
+      slots:[
+        { meal:'🍱 Lunch', time:'12:00–13:30', location:'Inside Ba Na Hills Park',
+          rows:[
+            {type:'viet', name:'In-park restaurants', rating:'3.5/5', for:'🟢', forLabel:'All 4', dish:'Vietnamese rice sets, noodle soups, veg options for Revanth — budget extra as tourist zone', address:'Inside Ba Na Hills Park', vndPrice:200000},
+          ]
+        },
+        { meal:'🌙 Dinner', time:'18:00–21:00', location:'Da Nang (near Blue Sun Hotel)',
+          rows:[
+            {type:'viet', name:'Mi Quang Ba Mua', rating:'4.6/5', for:'🟡', forLabel:'Rohith · Sanjay · Sai', dish:'Turmeric noodles with chicken, peanuts, crispy crackers', address:'95 Nguyen Tri Phuong, Da Nang', vndPrice:55000},
+            {type:'viet', name:'Loving Vegan Restaurant', rating:'4.5/5', for:'🔵', forLabel:'Revanth', dish:'Mozza sticks, cashew Mac & cheese, Korean spicy noodles, Banh Xeo', address:'61 Le Quang Dao, Da Nang', vndPrice:95000},
+            {type:'indian', name:'Rang Da Nang', rating:'4.9/5 (968 reviews)', for:'🟢', forLabel:'All 4', dish:'Hyderabadi Biryani, Chicken Seekh Kebab, Tandoori Chicken — #17 of 1,772 in Da Nang!', address:'Da Nang city — reserve ahead!', vndPrice:220000},
+            {type:'indian', name:'Ganesh Da Nang', rating:'4.5/5', for:'🟢', forLabel:'All 4', dish:'Reliable fallback if Rang is full — consistent quality', address:'187 Le Quang Dao, Da Nang', vndPrice:190000},
+          ]
+        }
+      ]
+    },
+    {
+      n:9, date:'Aug 22 (Sat)', title:'Departure Day', tag:'tag-travel',
+      meals:{b:true,l:false,d:false},
+      note:'✅ Breakfast at Blue Sun included. Sai & Revanth depart 09:00 for MH-747. Rohith & Sanjay depart ~12:00 for VN-0633. Nothing else to buy!',
+      slots:[]
+    }
+  ];
+
+  allMealDays.forEach((d, i) => {
     const card = document.createElement('div');
-    card.className = 'day-card' + (i===0?' open':'');
+    card.className = 'day-card';
+    const isOpen = i === 0;
 
-    const mealStatus = [
-      `<span style="font-size:11px;padding:2px 8px;border-radius:99px;font-weight:600;${d.meals.b?'background:#edf6f1;color:#1e6b45;border:1px solid #b0d9c0':'background:#fdf0f0;color:#b83232;border:1px solid #e8b0b0'}">🍳 B ${d.meals.b?'✅':'❌'}</span>`,
-      `<span style="font-size:11px;padding:2px 8px;border-radius:99px;font-weight:600;${d.meals.l?'background:#edf6f1;color:#1e6b45;border:1px solid #b0d9c0':'background:#fdf0f0;color:#b83232;border:1px solid #e8b0b0'}">🍱 L ${d.meals.l?'✅':'❌'}</span>`,
-      `<span style="font-size:11px;padding:2px 8px;border-radius:99px;font-weight:600;${d.meals.d?'background:#edf6f1;color:#1e6b45;border:1px solid #b0d9c0':'background:#fdf0f0;color:#b83232;border:1px solid #e8b0b0'}">🌙 D ${d.meals.d?'✅':'❌'}</span>`
-    ].join(' ');
+    const mealBadge = (included, label) =>
+      `<span style="font-size:11px;padding:2px 8px;border-radius:99px;font-weight:600;${included?'background:#edf6f1;color:#1e6b45;border:1px solid #b0d9c0':'background:#fdf0f0;color:#b83232;border:1px solid #e8b0b0'}">${label} ${included?'✅':'❌'}</span>`;
 
-    let slotsHTML = d.slots.length === 0 ? `<div class="note-card tip" style="margin-top:12px;"><div class="note-icon">✅</div><div>${d.note}</div></div>` : '';
+    const mealStatus = [mealBadge(d.meals.b,'🍳 B'), mealBadge(d.meals.l,'🍱 L'), mealBadge(d.meals.d,'🌙 D')].join(' ');
 
-    d.slots.forEach(slot => {
-      const optionsHTML = slot.options.map(opt => {
-        const vnd = opt.vndPrice;
-        const inr = Math.round(vnd * inrPerVnd);
-        const aud = (vnd / (usdVnd / (usdInr / audInr))).toFixed(2);
-        const typeIcon = opt.type === 'indian' ? '🇮🇳' : opt.type === 'viet' ? '🇻🇳' : '🏪';
-        const typeLabel = opt.type === 'indian' ? 'Indian' : opt.type === 'viet' ? 'Vietnamese' : 'Other';
-        const typeLabelColor = opt.type === 'indian' ? '#7a3a10' : opt.type === 'viet' ? '#1e6b45' : '#444';
-        const typeLabelBg = opt.type === 'indian' ? '#fff0e0' : opt.type === 'viet' ? '#edf6f1' : '#f0f0f0';
-        const typeBg = opt.type === 'indian' ? 'background:#fff8f0;border-color:#f0c880;' : opt.type === 'viet' ? 'background:#f8fff8;border-color:#b0d9b0;' : 'background:#f8f8f8;border-color:#ddd;';
-        return `
-          <div class="rest-card" style="${typeBg}">
-            <div class="rest-card-top">
-              <div class="rest-name">${typeIcon} ${opt.name} <span style="font-size:10px;font-weight:600;padding:2px 8px;border-radius:99px;background:${typeLabelBg};color:${typeLabelColor};border:1px solid ${typeLabelColor}30;vertical-align:middle;margin-left:4px;">[${typeLabel}]</span></div>
-              <div class="rest-rating">${opt.rating}</div>
+    let bodyHTML = `<div class="note-card info" style="margin:12px 0 8px;"><div class="note-icon">📝</div><div style="font-size:13px;">${d.note}</div></div>`;
+
+    if(d.slots.length === 0) {
+      bodyHTML = `<div class="note-card tip" style="margin:12px 0;"><div class="note-icon">✅</div><div style="font-size:13px;">${d.note}</div></div>`;
+    } else {
+      d.slots.forEach(slot => {
+        const typeColor = r => r.type==='indian'?'#7a3a10':r.type==='viet'?'#1e6b45':'#555';
+        const typeBg   = r => r.type==='indian'?'#fff0e0':r.type==='viet'?'#edf6f1':'#f0f0f0';
+        const typeIcon = r => r.type==='indian'?'🇮🇳':r.type==='viet'?'🇻🇳':'🏪';
+        const typeLabel= r => r.type==='indian'?'Indian':r.type==='viet'?'Vietnamese':'Other';
+        const forColor = f => f==='🟢'?'#1e6b45':f==='🟡'?'#7a5010':'#1a3a7a';
+        const forBg   = f => f==='🟢'?'#edf6f1':f==='🟡'?'#fff8e6':'#e8f4ff';
+
+        const tableRows = slot.rows.map(r => `
+          <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:middle;">
+              <span style="font-size:10px;font-weight:700;padding:2px 7px;border-radius:99px;background:${typeBg(r)};color:${typeColor(r)};display:inline-block;margin-bottom:3px;">${typeIcon(r)} ${typeLabel(r)}</span><br>
+              <strong style="font-size:13px;color:var(--ink);">${r.name}</strong>
+            </td>
+            <td style="padding:9px 12px;border-bottom:1px solid var(--border);text-align:center;vertical-align:middle;">
+              <span style="color:var(--gold);font-weight:600;font-size:12px;">⭐ ${r.rating}</span>
+            </td>
+            <td style="padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:middle;">
+              <span style="font-size:10px;font-weight:600;padding:2px 7px;border-radius:99px;background:${forBg(r.for)};color:${forColor(r.for)};">${r.for} ${r.forLabel}</span>
+            </td>
+            <td style="padding:9px 12px;border-bottom:1px solid var(--border);font-size:12px;color:var(--ink-mid);vertical-align:middle;">${r.dish}</td>
+            <td style="padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:middle;">${r.vndPrice > 0 ? prices(r.vndPrice) : '<span style="font-size:11px;color:#aaa;">—</span>'}</td>
+            <td style="padding:9px 12px;border-bottom:1px solid var(--border);font-size:11px;color:var(--ink-light);vertical-align:middle;">📍 ${r.address}</td>
+          </tr>`).join('');
+
+        bodyHTML += `
+          <div style="margin-top:16px;">
+            <div style="display:inline-block;font-size:11px;font-weight:700;color:#7a5010;text-transform:uppercase;letter-spacing:0.08em;padding:5px 12px;background:var(--gold-light);border:1px solid var(--gold-mid);border-radius:7px;margin-bottom:10px;">
+              ${slot.meal} &nbsp;·&nbsp; ${slot.time} &nbsp;·&nbsp; 📍 ${slot.location}
             </div>
-            <div class="rest-diet"><span class="diet-pill ${opt.for}" style="font-size:10px;padding:2px 8px;">${opt.forLabel}</span></div>
-            <div class="rest-dishes"><strong>Try:</strong> ${opt.dish}</div>
-            <div class="mrc-price" data-vnd-price="${vnd}" style="margin:8px 0;padding:8px;background:rgba(0,0,0,0.03);border-radius:7px;">
-              <span class="vnd-p">₫${vnd.toLocaleString()}</span> <span style="color:var(--ink-light);font-size:11px;">= ₹${inr.toLocaleString()} = A$${aud}</span>
+            <div style="overflow-x:auto;border-radius:10px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+              <table style="width:100%;border-collapse:collapse;background:var(--white);min-width:600px;">
+                <thead>
+                  <tr style="background:var(--navy);">
+                    <th style="padding:9px 12px;text-align:left;font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:rgba(255,255,255,0.8);width:22%;">Restaurant</th>
+                    <th style="padding:9px 12px;text-align:center;font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:rgba(255,255,255,0.8);width:8%;">Rating</th>
+                    <th style="padding:9px 12px;text-align:left;font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:rgba(255,255,255,0.8);width:15%;">Suitable For</th>
+                    <th style="padding:9px 12px;text-align:left;font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:rgba(255,255,255,0.8);width:25%;">What to Order</th>
+                    <th style="padding:9px 12px;text-align:left;font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:rgba(255,255,255,0.8);width:15%;">Est. Price/Person</th>
+                    <th style="padding:9px 12px;text-align:left;font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:rgba(255,255,255,0.8);width:15%;">Address</th>
+                  </tr>
+                </thead>
+                <tbody>${tableRows}</tbody>
+              </table>
             </div>
-            <div class="rest-meta">📍 ${opt.address}<br>${opt.note}</div>
           </div>`;
-      }).join('');
-
-      slotsHTML += `
-        <div style="margin-top:16px;">
-          <div style="font-size:12px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">
-            🍽️ ${slot.meal} · ${slot.time} · ${slot.location}
-          </div>
-          <div class="rest-grid">${optionsHTML}</div>
-        </div>`;
-    });
-
-    if(d.slots.length > 0) {
-      slotsHTML = `<div class="note-card info" style="margin-top:12px;margin-bottom:4px;"><div class="note-icon">📝</div><div>${d.note}</div></div>` + slotsHTML;
+      });
     }
 
     card.innerHTML = `
-      <div class="day-header" onclick="toggleDay(this)">
+      <div class="day-header" style="cursor:pointer;" onclick="this.parentElement.querySelector('.day-body').style.display=this.parentElement.querySelector('.day-body').style.display==='block'?'none':'block';this.querySelector('.day-chevron').style.transform=this.parentElement.querySelector('.day-body').style.display==='block'?'rotate(180deg)':'rotate(0deg)'">
         <div class="day-num">${d.n}</div>
         <div class="day-info">
           <div class="day-date">${d.date}</div>
           <div class="day-title">${d.title}</div>
-          <div class="day-meta" style="display:flex;gap:6px;margin-top:4px;">${mealStatus}</div>
+          <div class="day-meta" style="display:flex;gap:5px;margin-top:5px;flex-wrap:wrap;">${mealStatus}</div>
         </div>
-        <div class="day-chevron"${i===0?' style="transform:rotate(180deg)"':''}>▾</div>
+        <div class="day-chevron" style="color:var(--ink-light);font-size:16px;transition:transform 0.25s;flex-shrink:0;margin-left:8px;transform:${isOpen?'rotate(180deg)':'rotate(0deg)'}">▾</div>
       </div>
-      <div class="day-body">${slotsHTML}</div>`;
+      <div class="day-body" style="display:${isOpen?'block':'none'};padding:0 18px 18px;">${bodyHTML}</div>`;
+
     container.appendChild(card);
   });
 }
+
 
 // ── NAV ACTIVE ──────────────────────────────────────────────────────────────
 window.addEventListener('scroll', () => {
