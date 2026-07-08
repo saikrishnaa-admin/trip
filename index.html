@@ -510,6 +510,18 @@ nav a:hover, nav a.active { color: var(--white); border-bottom-color: var(--gold
   font-size: 14px; font-weight: 600; color: var(--green);
 }
 
+/* ── EXPAND COLLAPSE ── */
+.ec-bar { display:flex; align-items:center; justify-content:space-between; margin:1rem 0 1.25rem; padding-bottom:1rem; border-bottom:1px solid var(--border); }
+.ec-info { font-size:12px; color:var(--ink-light); }
+.ec-info span { font-weight:600; color:var(--ink-mid); }
+.ec-buttons { display:flex; gap:8px; }
+.ec-btn { display:inline-flex; align-items:center; gap:6px; padding:7px 16px; border-radius:8px; font-size:12px; font-weight:600; cursor:pointer; border:1.5px solid; transition:all 0.15s; letter-spacing:0.02em; font-family:'Inter',sans-serif; }
+.ec-btn-expand { background:var(--navy); color:white; border-color:var(--navy); }
+.ec-btn-expand:hover { background:var(--navy-mid); border-color:var(--navy-mid); transform:translateY(-1px); box-shadow:0 3px 10px rgba(28,43,74,0.25); }
+.ec-btn-collapse { background:var(--white); color:var(--ink-mid); border-color:var(--border); }
+.ec-btn-collapse:hover { border-color:var(--ink-mid); color:var(--ink); transform:translateY(-1px); box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+.ec-btn svg { width:13px; height:13px; flex-shrink:0; }
+
 /* ── SHIMMER CREDIT ── */
 @keyframes shimmer {
   0% { background-position: -200% center; }
@@ -737,6 +749,19 @@ footer a { color: var(--gold); text-decoration: none; }
 <div class="container" id="itinerary">
   <div class="section-label">Day by Day</div>
   <div class="section-title">Trip Itinerary</div>
+  <div class="ec-bar">
+    <div class="ec-info"><span id="itin-open">1</span> of <span>9</span> days open</div>
+    <div class="ec-buttons">
+      <button class="ec-btn ec-btn-expand" onclick="ecExpandAll('days-container','itin-open')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/><line x1="12" y1="3" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21"/></svg>
+        Expand All
+      </button>
+      <button class="ec-btn ec-btn-collapse" onclick="ecCollapseAll('days-container','itin-open')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/><line x1="12" y1="3" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21"/></svg>
+        Collapse All
+      </button>
+    </div>
+  </div>
   <div id="days-container"></div>
 </div>
 
@@ -1470,12 +1495,26 @@ footer a { color: var(--gold); text-decoration: none; }
   <div class="section-title">Meal Planner</div>
 
   <!-- VND Live Rate Bar -->
-  <div class="vnd-bar" style="background:linear-gradient(90deg,var(--navy),var(--navy-mid));border-radius:10px;padding:10px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:1.5rem;box-shadow:0 2px 10px rgba(28,43,74,0.15);">
-    <span class="vnd-label">💱 Live VND Rate:</span>
-    <span class="vnd-rate vnd-rate-display">Loading...</span>
-    <span class="vnd-dot">·</span>
-    <span style="font-size:12px;color:rgba(255,255,255,0.6);">All meal prices convert live on refresh</span>
-    <span class="vnd-time" id="vnd-time"></span>
+  <div class="vnd-bar" style="background:linear-gradient(90deg,var(--navy),var(--navy-mid));border-radius:10px;padding:10px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:1rem;box-shadow:0 2px 10px rgba(28,43,74,0.15);">
+    <span class="vnd-label" style="color:rgba(255,255,255,0.65);font-size:12px;">💱 Rates (Jul 3, 2026):</span>
+    <span class="vnd-rate vnd-rate-display" style="color:var(--gold);font-weight:600;font-size:12px;">1 USD = ₫26,315</span>
+    <span style="color:rgba(255,255,255,0.3);">·</span>
+    <span style="font-size:12px;color:rgba(255,255,255,0.6);">All meal prices shown per person</span>
+    <span class="vnd-time" id="vnd-time" style="margin-left:auto;font-size:11px;color:rgba(255,255,255,0.4);"></span>
+  </div>
+
+  <div class="ec-bar">
+    <div class="ec-info"><span id="meal-open">1</span> of <span>9</span> days open</div>
+    <div class="ec-buttons">
+      <button class="ec-btn ec-btn-expand" onclick="ecExpandAll('meal-days-container','meal-open')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/><line x1="12" y1="3" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21"/></svg>
+        Expand All
+      </button>
+      <button class="ec-btn ec-btn-collapse" onclick="ecCollapseAll('meal-days-container','meal-open')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/><line x1="12" y1="3" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21"/></svg>
+        Collapse All
+      </button>
+    </div>
   </div>
 
   <!-- DIETARY PHRASES CARD -->
@@ -1857,6 +1896,36 @@ function toggleDay(h) {
   const card = h.parentElement;
   card.classList.toggle('open');
   h.querySelector('.day-chevron').style.transform = card.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+  ecUpdateCount('days-container', 'itin-open');
+}
+
+// ── EXPAND / COLLAPSE ALL ────────────────────────────────────────────────────
+function ecExpandAll(containerId, counterId) {
+  const container = document.getElementById(containerId);
+  container.querySelectorAll('.day-card').forEach(c => {
+    c.classList.add('open');
+    const body = c.querySelector('.day-body');
+    const chev = c.querySelector('.day-chevron');
+    if(body) body.style.display = 'block';
+    if(chev) chev.style.transform = 'rotate(180deg)';
+  });
+  ecUpdateCount(containerId, counterId);
+}
+function ecCollapseAll(containerId, counterId) {
+  const container = document.getElementById(containerId);
+  container.querySelectorAll('.day-card').forEach(c => {
+    c.classList.remove('open');
+    const body = c.querySelector('.day-body');
+    const chev = c.querySelector('.day-chevron');
+    if(body) body.style.display = 'none';
+    if(chev) chev.style.transform = 'rotate(0deg)';
+  });
+  ecUpdateCount(containerId, counterId);
+}
+function ecUpdateCount(containerId, counterId) {
+  const container = document.getElementById(containerId);
+  const countEl = document.getElementById(counterId);
+  if(container && countEl) countEl.textContent = container.querySelectorAll('.day-card.open').length;
 }
 
 // ── FOOD TABS
